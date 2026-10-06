@@ -439,6 +439,9 @@ export default function Landing() {
                   including a payment pipeline that balanced 10M+ transactions a year.
                 </p>
                 <p>AI changed how software gets built. It didn't change what production software owes the business.</p>
+                <p className="uc-hand text-2xl" style={{ color: C.tealDark, transform: "rotate(-2deg)" }}>
+                  Same process. Different lipstick.
+                </p>
               </div>
             </div>
           </div>
