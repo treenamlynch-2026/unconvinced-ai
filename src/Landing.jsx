@@ -1,6 +1,8 @@
 import { useState } from "react";
 import ContactForm from "./ContactForm.jsx";
-import { slugify } from "./content.js";
+import { slugify, getDoc, listDocs } from "./content.js";
+
+const live = (section, slug) => Boolean(getDoc(section, slug));
 
 /* ============================================================
    unconvinced.ai — landing page
@@ -48,13 +50,8 @@ const METHOD = [
   { n: "06", t: "Report", d: "Document findings, severity and remaining risk." },
 ];
 
-// VERIFY: replace with actual numbers from the Congress Trade Detective audit.
-const CASE_STATS = [
-  { v: 127, l: "Tests run" },
-  { v: 19, l: "Failures discovered" },
-  { v: 8, l: "High-risk findings" },
-  { v: 0, l: "Known critical failures after remediation" },
-];
+const CASE_STATS = []; // add only numbers from the real audit
+const hasStats = CASE_STATS.length > 0;
 
 // VERIFY: use real incidents (with sources) or keep the "illustrative" label.
 const MUSEUM = [
@@ -78,6 +75,7 @@ const LAB = [
 
 function Img({ src, alt, className = "", style }) {
   const [bad, setBad] = useState(false);
+  if (bad && !import.meta.env.DEV) return null;
   if (bad)
     return (
       <div
@@ -339,7 +337,7 @@ export default function Landing() {
       </section>
 
       {/* CASE STUDY */}
-      <section id="case-studies" className="max-w-6xl mx-auto px-5 py-14 grid lg:grid-cols-3 gap-10 items-center">
+      <section id="case-studies" className={`max-w-6xl mx-auto px-5 py-14 grid gap-10 items-center ${hasStats ? "lg:grid-cols-3" : "lg:grid-cols-2"}`}>
         <div>
           <p className="font-bold" style={{ color: C.tealDark }}>
             Case study
@@ -353,11 +351,13 @@ export default function Landing() {
             An app that tracks stock trades by members of Congress and overlays the news of the time. AI did much of the
             build. Then it went through a full adversarial audit using the Unconvinced Method.
           </p>
-          <div className="mt-6">
-            <Btn href="/cases/congress-trade-detective">See the full case study</Btn>
-          </div>
+          {live("cases", "congress-trade-detective") ? (
+            <div className="mt-6"><Btn href="/cases/congress-trade-detective">See the full case study</Btn></div>
+          ) : (
+            <p className="mt-6 text-sm font-bold" style={{ color: C.tealDark }}>Full write-up coming soon.</p>
+          )}
         </div>
-        <dl className="bg-white rounded" style={{ border: `1px solid ${C.line}` }}>
+        {hasStats && (<dl className="bg-white rounded" style={{ border: `1px solid ${C.line}` }}>
           {CASE_STATS.map((s, i) => (
             <div key={s.l} className="px-5 py-4" style={{ borderTop: i ? `1px solid ${C.line}` : "none" }}>
               <dd className="uc-display text-4xl" style={{ color: C.tealDark }}>
@@ -368,7 +368,7 @@ export default function Landing() {
               </dt>
             </div>
           ))}
-        </dl>
+        </dl>)}
         <Img src={IMG.pressRobot} alt="Robot reporter holding the Congress Trade Detective app" className="w-full" style={{ minHeight: 280 }} />
       </section>
 
@@ -380,21 +380,23 @@ export default function Landing() {
               The Failure Museum
             </h2>
             <p className="text-sm" style={{ color: C.muted }}>
-              Failure patterns we test for, and what they cost.
+              Failure patterns we test for.
             </p>
             <div className="mt-5 grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-1 gap-3">
               {MUSEUM.map((m) => (
                 <article key={m.q} className="rounded p-4" style={{ border: `1px solid ${C.line}` }}>
-                  <XMark />
+                  <div className="flex items-center justify-between"><XMark /><span className="text-xs uppercase tracking-wide" style={{ color: C.muted }}>Illustrative pattern</span></div>
                   <p className="mt-2 font-bold">“{m.q}”</p>
                   {m.d && (
                     <p className="text-sm mt-1" style={{ color: C.muted }}>
                       {m.d}
                     </p>
                   )}
-                  <a href={`/museum/${m.slug}`} className="uc-focus inline-block mt-3 text-sm font-bold" style={{ color: C.tealDark }}>
-                    Read case
-                  </a>
+                  {live("museum", m.slug) && (
+                    <a href={`/museum/${m.slug}`} className="uc-focus inline-block mt-3 text-sm font-bold" style={{ color: C.tealDark }}>
+                      Read case
+                    </a>
+                  )}
                 </article>
               ))}
             </div>
@@ -410,15 +412,17 @@ export default function Landing() {
             <ul className="mt-5 space-y-2">
               {LAB.map((l) => (
                 <li key={l}>
-                  <a href={`/lab/${slugify(l)}`} className="uc-focus hover:underline">
-                    {l}
-                  </a>
+                  {live("lab", slugify(l))
+                    ? <a href={`/lab/${slugify(l)}`} className="uc-focus hover:underline">{l}</a>
+                    : <span>{l}</span>}
                 </li>
               ))}
             </ul>
-            <a href="/lab" className="uc-focus inline-block mt-4 text-sm font-bold" style={{ color: C.tealDark }}>
-              View all articles
-            </a>
+            {listDocs("lab").length > 0 && (
+              <a href="/lab" className="uc-focus inline-block mt-4 text-sm font-bold" style={{ color: C.tealDark }}>
+                View all articles
+              </a>
+            )}
           </div>
 
           <div id="about">
@@ -436,9 +440,6 @@ export default function Landing() {
                   including a payment pipeline that balanced 10M+ transactions a year.
                 </p>
                 <p>AI changed how software gets built. It didn't change what production software owes the business.</p>
-                <a href="#" className="uc-focus inline-block font-bold" style={{ color: C.tealDark }}>
-                  Read my story
-                </a>
               </div>
             </div>
           </div>
@@ -472,6 +473,7 @@ export default function Landing() {
           <div className="text-xs" style={{ color: "#9FB2BC" }}>
             AI assurance for business systems
           </div>
+          <a href="mailto:inquiry@unconvinced.ai" className="text-xs underline" style={{ color: "#9FB2BC" }}>inquiry@unconvinced.ai</a>
         </footer>
       </section>
     </div>
