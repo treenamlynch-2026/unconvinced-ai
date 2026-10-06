@@ -440,14 +440,14 @@ export default function Landing() {
                   Android app. Payments and bookings from the app ran through that same back end, so every front end worked
                   from one set of numbers.
                 </p>
-                <p className="uc-hand text-2xl" style={{ color: C.tealDark, transform: "rotate(-2deg)" }}>
-                  Same process. Different lipstick.
-                </p>
                 <p>
                   Accounting, ticketing, web, hotel API and event planners all had to reconcile, correctly and on time. In
                   my last six years there, that meant a payment pipeline handling roughly $10 million a year.
                 </p>
                 <p>AI changed how software gets built. It didn't change what production software owes the business.</p>
+                <p className="uc-hand text-2xl" style={{ color: C.tealDark, transform: "rotate(-2deg)" }}>
+                  Same process. Different lipstick.
+                </p>
               </div>
             </div>
           </div>
