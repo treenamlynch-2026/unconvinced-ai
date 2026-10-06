@@ -435,13 +435,19 @@ export default function Landing() {
               <Img src={IMG.headshot} alt="Treena Lynch headshot" className="w-28 h-28 rounded-full object-cover flex-shrink-0" />
               <div className="text-sm space-y-3">
                 <p>
-                  Fifteen years building and supporting business systems where “mostly correct” wasn't correct enough,
-                  including a payment pipeline that balanced roughly $10 million a year.
+                  OPM: other people's money. It was the mantra at World Wide Group, the events and training organization
+                  where I spent fifteen years on the back-end systems. I built the website back end and owned the native
+                  Android app. Payments and bookings from the app ran through that same back end, so every front end worked
+                  from one set of numbers.
                 </p>
-                <p>AI changed how software gets built. It didn't change what production software owes the business.</p>
                 <p className="uc-hand text-2xl" style={{ color: C.tealDark, transform: "rotate(-2deg)" }}>
                   Same process. Different lipstick.
                 </p>
+                <p>
+                  Accounting, ticketing, web, hotel API and event planners all had to reconcile, correctly and on time. In
+                  my last six years there, that meant a payment pipeline handling roughly $10 million a year.
+                </p>
+                <p>AI changed how software gets built. It didn't change what production software owes the business.</p>
               </div>
             </div>
           </div>
