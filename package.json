@@ -1,0 +1,25 @@
+{
+  "name": "unconvinced-ai",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "npm run build && wrangler dev",
+    "deploy": "npm run build && wrangler deploy",
+    "db:init": "wrangler d1 execute unconvinced --remote --file=schema.sql",
+    "leads": "wrangler d1 execute unconvinced --remote --command \"SELECT id, created_at, name, email, company, substr(message,1,80) AS message FROM leads ORDER BY id DESC LIMIT 25\""
+  },
+  "dependencies": {
+    "marked": "^16.0.0",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0"
+  },
+  "devDependencies": {
+    "@tailwindcss/vite": "^4.1.0",
+    "@vitejs/plugin-react": "^5.0.0",
+    "tailwindcss": "^4.1.0",
+    "vite": "^7.0.0",
+    "wrangler": "^4.0.0"
+  }
+}
