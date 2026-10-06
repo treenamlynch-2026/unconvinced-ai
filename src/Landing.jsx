@@ -435,8 +435,8 @@ export default function Landing() {
               <Img src={IMG.headshot} alt="Treena Lynch headshot" className="w-28 h-28 rounded-full object-cover flex-shrink-0" />
               <div className="text-sm space-y-3">
                 <p>
-                  Two decades building and supporting business systems where “mostly correct” wasn't correct enough,
-                  including a payment pipeline that balanced 10M+ transactions a year.
+                  Fifteen years building and supporting business systems where “mostly correct” wasn't correct enough,
+                  including a payment pipeline that balanced roughly $10 million a year.
                 </p>
                 <p>AI changed how software gets built. It didn't change what production software owes the business.</p>
                 <p className="uc-hand text-2xl" style={{ color: C.tealDark, transform: "rotate(-2deg)" }}>
