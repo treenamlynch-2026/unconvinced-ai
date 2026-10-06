@@ -345,11 +345,10 @@ export default function Landing() {
           <h2 className="uc-display text-4xl mt-1" style={{ color: C.navy }}>
             Congress Trade Detective
           </h2>
-          <p className="mt-3 text-lg">I built this with AI. Then I tried to prove my own system wrong.</p>
+          <p className="mt-3 text-lg">I built this with AI. Now it's in App Store review.</p>
           <p className="mt-3 text-sm" style={{ color: C.muted }}>
-            {/* VERIFY: platform wording (iOS / React Native?) */}
-            An app that tracks stock trades by members of Congress and overlays the news of the time. AI did much of the
-            build. Then it went through a full adversarial audit using the Unconvinced Method.
+            An iOS app that tracks stock trades by members of Congress and overlays the news of the time. AI did much of
+            the build. It is currently in App Store review.
           </p>
           {live("cases", "congress-trade-detective") ? (
             <div className="mt-6"><Btn href="/cases/congress-trade-detective">See the full case study</Btn></div>
