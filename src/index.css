@@ -15,6 +15,7 @@
   --teal-2: #145a5f;
 }
 
+html, body { overflow-x: clip; }
 html { scroll-behavior: smooth; }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
 
@@ -25,7 +26,6 @@ body { margin: 0; background: var(--paper); color: var(--ink); }
   /* faint paper grain */
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .35 0 0 0 0 .28 0 0 0 0 .2 0 0 0 .06 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
   font-family: 'Barlow', system-ui, sans-serif;
-  overflow-x: hidden;
 }
 
 .uc-display { font-family: 'Barlow Condensed', 'Arial Narrow', sans-serif; font-weight: 800; letter-spacing: -0.005em; line-height: 1.02; }
@@ -74,8 +74,8 @@ body { margin: 0; background: var(--paper); color: var(--ink); }
 .uc-skip { position: absolute; left: -9999px; }
 .uc-skip:focus { left: 1rem; top: 1rem; z-index: 50; background: var(--card); padding: .5rem 1rem; }
 
-.uc-btn { display: inline-block; padding: .75rem 1.25rem; border-radius: 4px; font-weight: 700; font-size: .95rem; letter-spacing: .02em; border: 2px solid var(--teal-2); }
-.uc-btn-solid { background: var(--teal-2); color: #fff; }
+.uc-btn { display: inline-block; white-space: nowrap; padding: .75rem 1.25rem; border-radius: 4px; font-weight: 700; font-size: .95rem; letter-spacing: .02em; border: 2px solid var(--teal-2); }
+.uc-btn-solid { background: var(--teal-2); color: var(--card); }
 .uc-btn-solid:hover { background: var(--teal); border-color: var(--teal); }
 .uc-btn-ghost { background: transparent; color: var(--teal-2); }
 .uc-btn-ghost:hover { background: rgba(29,122,128,.08); }
