@@ -13,7 +13,8 @@ Editorial, manifesto voice. Warm paper, rust, restrained teal. Weathered-worksho
 ## Brand
 - Wordmark: "Unconvinced" in Barlow Condensed 800 + rusted square dot (`.uc-dot`, 0.17em, stroke weight).
 - Logo plate tagline: "Prove it."
-- Hal character art: none finalized in repo. Do not invent or use old poses.
+- Hal character art: `public/images/hal.png` (waving pose, transparent). Use only this pose.
+- Home page (`src/pages/Home.jsx`, `src/home.css`) uses the Concept 2 industrial/weathered look: rusty blue + cream wordmark, copper magnifier, Anton / Archivo / Zilla Slab. Other pages still use the tokens below.
 
 ## Theme (OKLCH)
 - paper `oklch(95.3% 0.012 80)` · paper-2 `oklch(91.5% 0.018 80)` · ink `oklch(25% 0.01 230)`
