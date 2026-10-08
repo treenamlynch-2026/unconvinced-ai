@@ -26,7 +26,7 @@ export default function DocPage({ section, slug }) {
           {items.map((d) => (
             <li key={d.slug}>
               <Link to={`/${section}/${d.slug}`} className="text-xl font-bold underline">{d.title}</Link>
-              {d.summary && <p className="mt-1" style={{ color: "var(--color-muted)" }}>{d.summary}</p>}
+              {d.summary && <p className="mt-1" style={{ color: "var(--muted)" }}>{d.summary}</p>}
             </li>
           ))}
         </ul>
@@ -37,11 +37,11 @@ export default function DocPage({ section, slug }) {
   const doc = getDoc(section, slug);
   return (
     <Shell title={doc ? doc.title : label}>
-      <Link to={`/${section}`} className="text-sm font-bold" style={{ color: "var(--color-teal-2)" }}>{label}</Link>
+      <Link to={`/${section}`} className="text-sm font-bold" style={{ color: "var(--teal-2)" }}>{label}</Link>
       {doc ? (
         <article className="mt-2">
           <H1>{doc.title}</H1>
-          {doc.date && <p className="mt-2 text-sm" style={{ color: "var(--color-muted)" }}>{doc.date}</p>}
+          {doc.date && <p className="mt-2 text-sm" style={{ color: "var(--muted)" }}>{doc.date}</p>}
           <div className="prose-uc mt-6" dangerouslySetInnerHTML={{ __html: marked.parse(doc.body) }} />
         </article>
       ) : (

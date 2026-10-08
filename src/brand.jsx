@@ -42,7 +42,7 @@ export function Img({ src, alt, className = "", style }) {
 }
 
 export function Button({ to, href, children, variant = "solid" }) {
-  const cls = variant === "block" ? "uc-btn-block" : `uc-btn ${variant === "solid" ? "uc-btn-solid" : "uc-btn-ghost"}`;
+  const cls = `uc-btn ${variant === "solid" ? "uc-btn-solid" : "uc-btn-ghost"}`;
   return href ? <a href={href} className={cls}>{children}</a> : <Link to={to} className={cls}>{children}</Link>;
 }
 
@@ -53,45 +53,66 @@ const NAV = [
   ["/contact", "Contact"],
 ];
 
-// N6 masthead + Ft5 statement footer. Four short links fit one row down to 320px, so no menu toggle.
 export function Layout({ title, children }) {
   const path = usePath();
+  const [menu, setMenu] = useState(false);
   useEffect(() => {
     document.title = title ? `${title} | Unconvinced.` : "Unconvinced. | Prove it.";
   }, [title]);
+  useEffect(() => setMenu(false), [path]);
 
   const active = (to) => (to === "/" ? path === "/" : path === to || path.startsWith(`${to}/`));
-  const links = () =>
+  const links = (cls) =>
     NAV.map(([to, label]) => (
-      <Link key={to} to={to} aria-current={active(to) ? "page" : undefined}>{label}</Link>
+      <Link key={to} to={to} className={cls} aria-current={active(to) ? "page" : undefined}>
+        {label}
+      </Link>
     ));
 
   return (
     <div className="uc-page min-h-screen flex flex-col">
       <a href="#main" className="uc-skip">Skip to content</a>
-      <header className="uc-mast">
-        <p className="uc-mast-line">Independent AI assurance</p>
-        <Link to="/" aria-label="Unconvinced. home" className="inline-block mt-1">
-          <Wordmark className="text-5xl sm:text-6xl" />
-        </Link>
-        <nav className="uc-mast-nav" aria-label="Primary">{links()}</nav>
-        <div className="uc-rule-double" aria-hidden="true" />
+      <header className="uc-header sticky top-0 z-20">
+        <div className="max-w-6xl mx-auto px-4 sm:px-5 py-3 flex items-center justify-between gap-4">
+          <Link to="/" className="uc-focus" aria-label="Unconvinced. home">
+            <Wordmark className="text-3xl" />
+          </Link>
+          <nav className="hidden md:flex items-center gap-7 font-semibold" aria-label="Primary">
+            {links("uc-nav uc-focus")}
+          </nav>
+          <button
+            type="button"
+            className="md:hidden uc-focus uc-menu-btn"
+            aria-expanded={menu}
+            aria-controls="mobile-nav"
+            onClick={() => setMenu(!menu)}
+          >
+            {menu ? "Close" : "Menu"}
+          </button>
+        </div>
+        {menu && (
+          <nav id="mobile-nav" className="md:hidden px-4 pb-4 flex flex-col gap-1 font-semibold" aria-label="Mobile">
+            {links("uc-nav uc-focus py-2")}
+          </nav>
+        )}
       </header>
 
       <main id="main" className="flex-1">{children}</main>
 
-      <footer className="uc-foot uc-bleed-paper2">
-        <div className="max-w-6xl mx-auto">
-          <p className="uc-display uc-foot-line">We don't trust confidence. We collect evidence.</p>
-          <div className="uc-foot-meta">
-            <span><Wordmark className="text-2xl" /> <span className="uc-display uc-tagline text-lg ml-2">Prove it.</span></span>
-            <nav aria-label="Footer">
-              {links()}
-              <a href={`mailto:${EMAIL}`}>{EMAIL}</a>
-            </nav>
+      <footer className="uc-footer">
+        <div className="max-w-6xl mx-auto px-4 sm:px-5 py-10 flex flex-col sm:flex-row gap-6 sm:items-end justify-between">
+          <div>
+            <Wordmark className="text-2xl" />
+            <p className="uc-display uc-tagline text-base">Prove it.</p>
           </div>
+          <nav className="flex flex-wrap gap-x-6 gap-y-2 text-sm font-semibold" aria-label="Footer">
+            {links("uc-focus hover:underline")}
+            <a href={`mailto:${EMAIL}`} className="uc-focus hover:underline">{EMAIL}</a>
+          </nav>
         </div>
       </footer>
     </div>
   );
 }
+
+export const Eyebrow = ({ children }) => <p className="uc-eyebrow">{children}</p>;
