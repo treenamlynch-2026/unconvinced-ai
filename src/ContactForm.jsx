@@ -3,8 +3,10 @@ import { useState } from "react";
 // Web3Forms public access key (designed to be visible in client code; not a secret).
 const ACCESS_KEY = "REPLACE_WITH_WEB3FORMS_KEY";
 const FALLBACK = "inquiry@unconvinced.ai";
+// The form renders only once a real key is set; until then the Contact page shows email only.
+export const FORM_READY = !ACCESS_KEY.startsWith("REPLACE");
 
-const field = "w-full rounded px-3 py-2 text-[#16222B] bg-white border-2 border-transparent focus:outline-none focus:border-[#27C4D8]";
+const field = "uc-field mt-1 font-normal";
 const empty = { name: "", email: "", company: "", message: "", website: "" };
 
 export default function ContactForm() {
@@ -53,7 +55,7 @@ export default function ContactForm() {
     return <p className="mt-6 text-lg font-semibold" role="status">{status.msg}</p>;
 
   return (
-    <form onSubmit={submit} className="mt-6 grid gap-3 text-left max-w-xl mx-auto">
+    <form onSubmit={submit} className="mt-8 grid gap-3 text-left max-w-xl">
       <div className="grid sm:grid-cols-2 gap-3">
         <label className="text-sm font-semibold">Name
           <input className={field} value={form.name} onChange={set("name")} required maxLength={100} autoComplete="name" />
@@ -70,9 +72,9 @@ export default function ContactForm() {
       </label>
       {/* Honeypot: hidden from people, filled by bots */}
       <input type="text" name="website" value={form.website} onChange={set("website")} tabIndex={-1} autoComplete="off" aria-hidden="true" className="absolute -left-[9999px] h-0 w-0 opacity-0" />
-      {status.state === "error" && <p className="text-sm font-semibold text-[#FF8A80]" role="alert">{status.msg}</p>}
+      {status.state === "error" && <p className="text-sm font-semibold text-[var(--color-rust)]" role="alert">{status.msg}</p>}
       <button type="submit" disabled={status.state === "sending"}
-        className="justify-self-center mt-2 px-7 py-4 rounded font-bold bg-[#27C4D8] text-[#0B1F2A] disabled:opacity-60 focus-visible:outline-3 focus-visible:outline-offset-3 focus-visible:outline-white">
+        className="justify-self-start mt-2 uc-btn uc-btn-solid disabled:opacity-60">
         {status.state === "sending" ? "Sending…" : "Put it to the test"}
       </button>
     </form>
