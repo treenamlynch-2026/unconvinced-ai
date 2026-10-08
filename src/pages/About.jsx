@@ -5,7 +5,7 @@ export default function About() {
     <Layout title="About">
       <section className="max-w-3xl mx-auto px-4 sm:px-6 pt-12 pb-20">
         <h1 className="uc-display uc-caps" style={{ fontSize: "var(--text-display-s)" }}>Treena Lynch</h1>
-        <p className="mt-2 uc-ui font-semibold uc-muted">Founder, AI assurance engineer</p>
+        <p className="mt-2 uc-ui font-semibold uc-muted">Founder, full-stack systems developer</p>
 
         <div className="mt-8 flex flex-col sm:flex-row gap-6 items-start">
           <Img src="/images/treena.jpg" alt="Treena Lynch headshot" className="w-32 h-32 rounded-full object-cover flex-shrink-0" />
