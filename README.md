@@ -23,6 +23,11 @@ Auto-deploy on push: Cloudflare dashboard → Workers & Pages → unconvinced-ai
 - `npm run dev`: UI only (contact form will fail; no Worker).
 - `npm run preview`: builds and runs the Worker + local D1. Run `npx wrangler d1 execute unconvinced --local --file=schema.sql` once first.
 
+## Pages
+`/`, `/apps`, `/apps/<slug>`, `/about`, `/contact`. Apps live in `src/apps.js`; each entry renders through the `/apps/<slug>` template. Set `play` (working browser build URL) or `links` only when real. Neither renders while empty.
+
+The contact form shows only after a real Web3Forms key is set in `src/ContactForm.jsx`. Until then, the Contact page offers email only.
+
 ## Content
 Markdown in `content/{cases,museum,lab}/<slug>.md`. Set `draft: false` to publish. Routes: `/cases`, `/museum`, `/lab`, and `/<section>/<slug>`.
 
