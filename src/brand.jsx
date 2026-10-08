@@ -70,7 +70,7 @@ export function Layout({ title, children }) {
     <div className="uc-page min-h-screen flex flex-col">
       <a href="#main" className="uc-skip">Skip to content</a>
       <header className="uc-mast">
-        <p className="uc-mast-line">Independent AI assurance</p>
+        <p className="uc-mast-line">Build it. Poke it. Support it.</p>
         <Link to="/" aria-label="Unconvinced. home" className="inline-block mt-1">
           <Wordmark className="text-5xl sm:text-6xl" />
         </Link>
