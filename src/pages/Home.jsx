@@ -95,7 +95,7 @@ export default function Home() {
               </div>
             </div>
             <div className="ux-hero-art">
-              <img src="/images/hal.png" alt="Hal, the Unconvinced robot investigator, waving" width="594" height="566" />
+              <img src={`${import.meta.env.BASE_URL}images/hal.png`} alt="Hal, the Unconvinced robot investigator, waving" width="594" height="566" />
               <div className="ux-sig ux-slab"><b>Hal</b><span>Special Investigator</span></div>
             </div>
           </div>
