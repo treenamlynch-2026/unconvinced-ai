@@ -72,7 +72,7 @@ export default function ContactForm() {
       </label>
       {/* Honeypot: hidden from people, filled by bots */}
       <input type="text" name="website" value={form.website} onChange={set("website")} tabIndex={-1} autoComplete="off" aria-hidden="true" className="absolute -left-[9999px] h-0 w-0 opacity-0" />
-      {status.state === "error" && <p className="text-sm font-semibold text-[#9a4520]" role="alert">{status.msg}</p>}
+      {status.state === "error" && <p className="text-sm font-semibold text-[var(--color-rust)]" role="alert">{status.msg}</p>}
       <button type="submit" disabled={status.state === "sending"}
         className="justify-self-start mt-2 uc-btn uc-btn-solid disabled:opacity-60">
         {status.state === "sending" ? "Sending…" : "Put it to the test"}

@@ -1,29 +1,30 @@
-import { Layout, Eyebrow } from "../brand.jsx";
+import { Layout } from "../brand.jsx";
 import { Link } from "../router.jsx";
 import { APPS } from "../apps.js";
 
+// Index-style list: one ruled row per app, not a card grid.
 export default function Apps() {
   return (
     <Layout title="Apps">
-      <section className="max-w-6xl mx-auto px-4 sm:px-5 py-14">
-        <Eyebrow>Apps</Eyebrow>
-        <h1 className="uc-display text-5xl mt-2">Built with AI. Then tested like it matters.</h1>
-        <ul className="mt-10 grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+      <section className="max-w-6xl mx-auto px-4 sm:px-6 pt-14 pb-24">
+        <h1 className="uc-display uc-caps" style={{ fontSize: "var(--text-display-s)" }}>
+          Built with AI. Then tested like it matters.
+        </h1>
+        <ul className="uc-sheet mt-10">
           {APPS.map((a) => (
-            <li key={a.slug} className="uc-card p-6 flex flex-col">
-              <div className="flex flex-wrap gap-2 items-center text-xs">
-                <span className="uc-stamp" style={{ color: "var(--steel)" }}>{a.platform}</span>
-                <span className="uc-stamp" style={{ color: "var(--rust)" }}>{a.status}</span>
-              </div>
-              <h2 className="uc-display text-3xl mt-4">{a.name}</h2>
-              <p className="mt-2 flex-1" style={{ color: "var(--muted)" }}>{a.summary}</p>
-              <Link to={`/apps/${a.slug}`} className="uc-focus mt-5 font-bold" style={{ color: "var(--teal-2)" }}>
-                Details <span aria-hidden="true">→</span>
+            <li key={a.slug}>
+              <Link to={`/apps/${a.slug}`} className="group grid md:grid-cols-[minmax(0,1.2fr)_minmax(0,1fr)_auto] gap-2 md:gap-8 py-6 md:items-baseline">
+                <span className="uc-display text-3xl sm:text-4xl group-hover:text-[var(--color-teal-2)]">{a.name}</span>
+                <span className="uc-muted">{a.summary}</span>
+                <span className="flex flex-wrap gap-2">
+                  <span className="uc-stamp" style={{ color: "var(--color-ink-2)" }}>{a.platform}</span>
+                  <span className="uc-stamp" style={{ color: "var(--color-rust)" }}>{a.status}</span>
+                </span>
               </Link>
             </li>
           ))}
         </ul>
-        <p className="mt-10 text-sm" style={{ color: "var(--muted)" }}>More projects are added here once they're ready to show.</p>
+        <p className="mt-8 text-sm uc-muted">More projects are added here once they're ready to show.</p>
       </section>
     </Layout>
   );

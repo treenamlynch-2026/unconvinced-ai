@@ -1,12 +1,11 @@
-import { Layout, Eyebrow, Img, Button } from "../brand.jsx";
+import { Layout, Img, Button } from "../brand.jsx";
 
 export default function About() {
   return (
     <Layout title="About">
-      <section className="max-w-3xl mx-auto px-4 sm:px-5 py-14">
-        <Eyebrow>About</Eyebrow>
-        <h1 className="uc-display text-5xl mt-2">Treena Lynch</h1>
-        <p className="mt-1 font-semibold" style={{ color: "var(--muted)" }}>Founder, AI assurance engineer</p>
+      <section className="max-w-3xl mx-auto px-4 sm:px-6 pt-12 pb-20">
+        <h1 className="uc-display uc-caps" style={{ fontSize: "var(--text-display-s)" }}>Treena Lynch</h1>
+        <p className="mt-2 uc-ui font-semibold uc-muted">Founder, AI assurance engineer</p>
 
         <div className="mt-8 flex flex-col sm:flex-row gap-6 items-start">
           <Img src="/images/treena.jpg" alt="Treena Lynch headshot" className="w-32 h-32 rounded-full object-cover flex-shrink-0" />
@@ -22,7 +21,7 @@ export default function About() {
               last six years there, that meant a payment pipeline handling roughly $10 million a year.
             </p>
             <p>AI changed how software gets built. It didn't change what production software owes the business.</p>
-            <p className="uc-hand text-3xl" style={{ color: "var(--teal-2)", transform: "rotate(-2deg)" }}>
+            <p className="uc-hand text-3xl" style={{ color: "var(--color-teal-2)", transform: "rotate(-2deg)" }}>
               Same process. Different lipstick.
             </p>
           </div>
