@@ -27,6 +27,8 @@ jobs:
       - run: npx vite build
       - name: SPA fallback for direct links
         run: cp dist/index.html dist/404.html
+      - name: Real files for SPA routes (HTTP 200 for crawlers)
+        run: node scripts/spa-routes.mjs
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:
