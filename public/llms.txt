@@ -1,0 +1,9 @@
+# unconvinced.ai
+
+> Portfolio of Treena Lynch, independent full-stack developer. Builds, tests and supports software, including the iOS apps below.
+
+## Apps
+- [Snapshot Puzzle: Photo Jigsaw](https://unconvinced.ai/apps/snapshot-puzzle/): Snapshot Puzzle is a free jigsaw puzzle maker for iPhone and iPad that turns your own photos into puzzles of 25 to 1,024 pieces. No ads, no account, works offline, and your photos never leave your device.
+- [Calm Coloring Book for Adults](https://unconvinced.ai/apps/calm-coloring-book/): Calm Coloring Book for Adults is a free iPhone coloring app with tap-to-fill and a freehand brush. No timers, no scores, no streaks, and no account required.
+- [Congress Trade Detective](https://unconvinced.ai/apps/congress-trade-detective/): Congress Trade Detective is a free iPhone app that tracks stock trades members of Congress disclose under the STOCK Act. It shows who traded, what, when, and how the stock moved before and after the trade became public. No login and no tracking.
+- [The Cut Card](https://unconvinced.ai/apps/the-cut-card/): The Cut Card is a free blackjack trainer for iPhone. Play full multi-deck shoes with real cut-card reshuffles, always-on basic strategy, and a shoe tracker for practicing card counting. Points only, no real money.
