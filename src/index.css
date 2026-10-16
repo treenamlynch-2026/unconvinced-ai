@@ -156,3 +156,15 @@ a.uc-card:hover { border-color: var(--color-rust); transform: translateY(-2px); 
 .uc-next { position: absolute; top: .75rem; right: .75rem; z-index: 2; width: 48px; height: 48px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: var(--font-display); font-size: 1.9rem; line-height: 1; color: #fff; background: var(--color-rust); border: 2px solid #2b1408; cursor: pointer; box-shadow: 0 4px 10px rgba(0,0,0,.45); transition: background-color var(--dur-fast), transform var(--dur-fast) var(--ease-out); }
 .uc-next:hover { background: #a8501f; transform: translateX(2px); }
 .uc-next span { margin-top: -4px; }
+
+/* resume case file */
+.uc-file { position: relative; padding: clamp(1.5rem, 4vw, 3rem); border-radius: 10px; border: 2px solid #2b1408;
+  background: radial-gradient(ellipse at 90% 0%, rgba(240,176,122,.10), transparent 50%), linear-gradient(180deg, #1d1a17, #141210);
+  box-shadow: inset 0 0 0 1px rgba(243,236,224,.06), 0 20px 50px rgba(0,0,0,.55); }
+.uc-file::before { content: ""; position: absolute; left: 0; right: 0; top: 0; height: 6px; border-radius: 8px 8px 0 0; background: linear-gradient(90deg, var(--color-rust-lo), var(--color-rust), var(--color-rust-lo)); }
+.uc-rv { position: absolute; width: 10px; height: 10px; border-radius: 50%; background: radial-gradient(circle at 35% 35%, #f0b07a, #5e3216); box-shadow: 0 1px 2px rgba(0,0,0,.6); }
+.uc-verified { font-family: var(--font-display); font-size: clamp(1.5rem, 3vw, 2.2rem); letter-spacing: .08em; text-transform: uppercase; color: var(--color-rust-hi); border: 4px double var(--color-rust-hi); padding: .1em .5em; border-radius: 6px; transform: rotate(-8deg); opacity: .85; margin-right: .5rem; }
+.uc-timeline { border-left: 2px solid var(--color-rust-lo); padding-left: 1.5rem; display: flex; flex-direction: column; gap: 1.75rem; }
+.uc-timeline > li { position: relative; }
+.uc-timeline > li::before { content: ""; position: absolute; left: calc(-1.5rem - 7px); top: .2rem; width: 12px; height: 12px; border-radius: 50%; background: var(--color-steel-3); border: 2px solid var(--color-rust); }
+.uc-chip { font-family: var(--font-ui); font-size: .85rem; font-weight: 600; padding: .35rem .75rem; border-radius: 999px; border: 1px solid var(--color-line-2); color: var(--color-text-2); background: var(--color-iron-3); }

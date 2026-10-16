@@ -85,6 +85,7 @@ function Hal() {
 const NAV = [
   ["/#method", "Method"],
   ["/#work", "Work"],
+  ["/#resume", "Résumé"],
   ["/museum", "Failure Museum"],
   ["/lab", "Lab"],
   ["/about", "About"],
