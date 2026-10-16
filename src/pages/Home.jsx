@@ -32,7 +32,10 @@ function AppShowcase() {
   return (
     <section id="work" className="max-w-6xl mx-auto px-4 sm:px-6 py-14 grid lg:grid-cols-2 gap-8 items-center scroll-mt-20">
       {/* big display */}
-      <div className="uc-card items-center gap-6 sm:gap-8" style={{ padding: "1.5rem", flexDirection: "row", flexWrap: "wrap", justifyContent: "center" }}>
+      <div className="uc-card items-center gap-6 sm:gap-8 relative" style={{ padding: "1.5rem", flexDirection: "row", flexWrap: "wrap", justifyContent: "center" }}>
+        <button type="button" className="uc-next" onClick={() => pick((sel + 1) % APPS.length)} aria-label={`Next app: ${APPS[(sel + 1) % APPS.length].name}`}>
+          <span aria-hidden="true">&raquo;</span>
+        </button>
         <div className="uc-phone">
           {app.shots.length ? (
             app.shots.map((src, i) => (
