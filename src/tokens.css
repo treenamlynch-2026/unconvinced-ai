@@ -1,44 +1,61 @@
-/* Hallmark · design system tokens · see design.md */
+/* Unconvinced. · Concept 2 (industrial / weathered) on black iron. */
 :root {
-  /* colour (OKLCH) */
-  --color-paper:   oklch(95.3% 0.012 80);
-  --color-paper-2: oklch(91.5% 0.018 80);
-  --color-card:    oklch(98% 0.007 80);
-  --color-ink:     oklch(25% 0.01 230);
-  --color-ink-2:   oklch(37% 0.012 230);
-  --color-muted:   oklch(48% 0.012 230);
-  --color-rule:    oklch(85% 0.025 80);
-  --color-rust:    oklch(48% 0.13 45);
-  --color-rust-hi: oklch(59% 0.14 48);
-  --color-rust-lo: oklch(36% 0.1 40);
-  --color-rust-glint: oklch(80% 0.08 55 / 0.45);
-  --color-rust-pit:   oklch(22% 0.05 40 / 0.55);
-  --color-teal:    oklch(52% 0.08 200);
-  --color-teal-2:  oklch(42% 0.07 200);
-  --color-teal-wash: oklch(52% 0.08 200 / 0.08);
-  --color-on-ink:  oklch(95.3% 0.012 80);
-  --color-on-ink-2: oklch(80% 0.015 80);
-  --color-plate-hi: oklch(91% 0.018 80);
-  --color-plate-lo: oklch(85% 0.022 80);
-  --color-rivet-hi: oklch(81% 0.01 80);
-  --color-rivet-lo: oklch(50% 0.005 80);
-  --color-shadow:  oklch(25% 0.03 60 / 0.15);
-  --color-focus:   var(--color-teal);
+  /* ground: black iron */
+  --color-iron:    #0f0e0d;
+  --color-iron-2:  #181614;
+  --color-iron-3:  #221f1c;
+  --color-card:    #1c1a17;
+  --color-line:    rgba(243, 236, 224, 0.14);
+  --color-line-2:  rgba(243, 236, 224, 0.28);
+
+  /* text: off-white */
+  --color-text:    #f3ece0;
+  --color-text-2:  #d6ccbc;
+  --color-muted:   #a59a8b;
+
+  /* Concept 2 rust + steel blue */
+  --color-rust:    #c4622d;
+  --color-rust-hi: #e08a4f;
+  --color-rust-lo: #6b3a1a;
+  --color-rust-dk: #4a220c;
+  --color-steel:   #8cc0e8;
+  --color-steel-2: #3e7cb1;
+  --color-steel-3: #22496f;
+  --color-cream:   #f1e7d0;
+
+  --color-focus:   var(--color-steel);
+
+  /* legacy aliases used by inner pages */
+  --color-paper:   var(--color-iron);
+  --color-paper-2: var(--color-iron-2);
+  --color-ink:     var(--color-text);
+  --color-ink-2:   var(--color-text-2);
+  --color-rule:    var(--color-line);
+  --color-teal:    var(--color-steel);
+  --color-teal-2:  var(--color-steel);
+  --color-on-ink:  var(--color-text);
+  --color-on-ink-2: var(--color-text-2);
 
   /* type */
-  --font-display: 'Barlow Condensed', 'Arial Narrow', sans-serif;
-  --font-body: 'Source Serif 4', Georgia, serif;
-  --font-ui: 'Barlow', system-ui, sans-serif;
-  --font-hand: 'Caveat', cursive;
-  --text-display: clamp(3rem, 9vw, 7rem);
+  --font-display: 'Anton', Impact, 'Arial Narrow', sans-serif;
+  --font-slab: 'Zilla Slab', Georgia, serif;
+  --font-body: 'Archivo', system-ui, sans-serif;
+  --font-ui: 'Archivo', system-ui, sans-serif;
+  --font-hand: 'Zilla Slab', Georgia, serif;
+  --text-display: clamp(2.75rem, 8vw, 6.5rem);
   --text-display-s: clamp(2.25rem, 5.5vw, 4rem);
 
-  /* space (4pt) */
   --space-2xs: 0.25rem; --space-xs: 0.5rem; --space-sm: 0.75rem; --space-md: 1rem;
   --space-lg: 1.5rem; --space-xl: 2.5rem; --space-2xl: 4rem; --space-3xl: 6rem;
 
   --rule-hair: 1px;
-  --radius-sm: 3px;
+  --radius-sm: 6px;
+  --radius-md: 10px;
   --ease-out: cubic-bezier(0.2, 0.7, 0.2, 1);
   --dur-fast: 150ms;
+
+  /* rust speckle layers (Concept 2) */
+  --rust-speck: radial-gradient(circle, rgba(150,70,25,.85) 0 2px, transparent 3px) 0 0/19px 23px,
+                radial-gradient(circle, rgba(120,55,20,.7) 0 5px, transparent 6px) 9px 5px/47px 53px,
+                radial-gradient(circle, rgba(90,40,15,.55) 0 9px, transparent 10px) 21px 31px/89px 97px;
 }

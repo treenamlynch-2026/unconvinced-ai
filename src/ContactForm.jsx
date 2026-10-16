@@ -19,7 +19,7 @@ export default function ContactForm() {
 
     // Honeypot: bots fill the hidden field. Pretend success, send nothing.
     if (form.website) {
-      setStatus({ state: "sent", msg: "Received. We'll reply from inquiry@unconvinced.ai." });
+      setStatus({ state: "sent", msg: "Received. I'll reply from inquiry@unconvinced.ai." });
       return;
     }
     if (ACCESS_KEY.startsWith("REPLACE")) {
@@ -44,7 +44,7 @@ export default function ContactForm() {
       });
       const data = await res.json().catch(() => ({}));
       if (!res.ok || !data.success) throw new Error(data.message || "Submission failed.");
-      setStatus({ state: "sent", msg: "Received. We'll reply from inquiry@unconvinced.ai." });
+      setStatus({ state: "sent", msg: "Received. I'll reply from inquiry@unconvinced.ai." });
       setForm(empty);
     } catch {
       setStatus({ state: "error", msg: `Something went wrong. Please try again or email ${FALLBACK}.` });
