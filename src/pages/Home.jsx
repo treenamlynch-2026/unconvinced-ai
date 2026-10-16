@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Layout, LogoLockup, Button } from "../brand.jsx";
 import { Link } from "../router.jsx";
 import { APPS } from "../apps.js";
+import Resume from "../Resume.jsx";
 
 // Layout = Iris's page mockup, section for section. Copy is placeholder until real copy is set.
 const LOREM = "Lorem ipsum dolor sit amet, consectetur adipiscing elit.";
@@ -135,6 +136,9 @@ export default function Home() {
           </ol>
         </div>
       </section>
+
+      {/* 5. Resume */}
+      <Resume />
 
       {/* 6. Museum / Lab / About + Hal merch */}
       <section className="uc-iron-2" style={{ borderTop: "1px solid var(--color-line)" }}>
