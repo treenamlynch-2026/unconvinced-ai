@@ -83,22 +83,22 @@ function Hal() {
 }
 
 const NAV = [
+  ["/#method", "Method"],
   ["/#work", "Work"],
-  ["/#services", "Services"],
-  ["/apps", "Apps"],
+  ["/museum", "Failure Museum"],
+  ["/lab", "Lab"],
   ["/about", "About"],
-  ["/contact", "Contact"],
 ];
 
+// Iris mockup: header (logo + tagline, nav, button) and iron footer.
 export function Layout({ title, children }) {
   const path = usePath();
   useEffect(() => {
-    document.title = title ? `${title} | Unconvinced.` : "Unconvinced. | Build it. Poke it. Support it.";
+    document.title = title ? `${title} | Unconvinced.` : "Unconvinced. | Build it? Poke it? Support it?";
   }, [title]);
 
-  const active = (to) => !to.includes("#") && (path === to || path.startsWith(`${to}/`));
   const NavLink = ({ to, label }) =>
-    to.includes("#") ? <a href={to}>{label}</a> : <Link to={to} aria-current={active(to) ? "page" : undefined}>{label}</Link>;
+    to.includes("#") ? <a href={to}>{label}</a> : <Link to={to} aria-current={path === to ? "page" : undefined}>{label}</Link>;
 
   return (
     <div className="uc-page min-h-screen flex flex-col">
@@ -106,29 +106,28 @@ export function Layout({ title, children }) {
       <header className="uc-mast">
         <div className="uc-mast-in">
           <Link to="/" aria-label="Unconvinced. home" className="flex items-center gap-2">
-            <Magnifier scale={0.2} handle={false} />
-            <Wordmark size="1.85rem" />
+            <Magnifier scale={0.22} handle={false} />
+            <span className="flex flex-col">
+              <Wordmark size="1.75rem" />
+              <span className="uc-ui text-[10px] font-bold tracking-[.18em]" style={{ color: "var(--color-muted)" }}>BUILD IT? POKE IT? SUPPORT IT?</span>
+            </span>
           </Link>
           <nav className="uc-mast-nav" aria-label="Primary">
             {NAV.map(([to, label]) => <NavLink key={to} to={to} label={label} />)}
           </nav>
+          <Button to="/contact" variant="rust">Contact <span aria-hidden="true">→</span></Button>
         </div>
       </header>
 
       <main id="main" className="flex-1">{children}</main>
 
-      <footer className="uc-foot uc-iron-2">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 py-14 flex flex-col items-center text-center gap-5">
-          <p className="uc-display uc-caps" style={{ fontSize: "clamp(2rem, 5vw, 3.25rem)" }}>Think it works? Prove it.</p>
-          <Button to="/contact" variant="rust">Start a project <span aria-hidden="true">→</span></Button>
-          <div className="w-full h-px my-4" style={{ background: "var(--color-line)" }} />
+      <footer className="uc-foot uc-iron">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 py-12 flex flex-col items-center text-center gap-5">
+          <p className="uc-display" style={{ fontSize: "clamp(1.75rem, 4vw, 2.25rem)" }}>Lorem ipsum dolor sit amet.</p>
+          <Button to="/contact" variant="cream">Contact <span aria-hidden="true">→</span></Button>
+          <div className="w-full h-px my-3" style={{ background: "var(--color-line)" }} />
           <Wordmark size="2.25rem" />
-          <p className="uc-slab uc-muted">Build it. Poke it. Support it.</p>
-          <nav aria-label="Footer" className="flex flex-wrap justify-center gap-x-6 gap-y-2 uc-ui text-sm" style={{ color: "var(--color-text-2)" }}>
-            {NAV.map(([to, label]) => <NavLink key={to} to={to} label={label} />)}
-            <a href={HAL_URL} target="_blank" rel="noopener">Hal on YouTube</a>
-            <a href={`mailto:${EMAIL}`}>{EMAIL}</a>
-          </nav>
+          <p className="uc-slab uc-muted">Build it? Poke it? Support it? — I can do that!</p>
         </div>
       </footer>
       <Hal />
