@@ -1,53 +1,91 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Layout, LogoLockup, Button } from "../brand.jsx";
 import { Link } from "../router.jsx";
+import { APPS } from "../apps.js";
 
 // Layout = Iris's page mockup, section for section. Copy is placeholder until real copy is set.
 const LOREM = "Lorem ipsum dolor sit amet, consectetur adipiscing elit.";
 
-const Ico = ({ children }) => (
-  <svg className="uc-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">{children}</svg>
-);
+// Small app icon; placeholder tile until the app has real store art.
+const AppIcon = ({ app, size = 48 }) =>
+  app.icon ? (
+    <img src={app.icon} alt="" width={size} height={size} className="flex-none" style={{ width: size, height: size, borderRadius: size * 0.225, boxShadow: "0 2px 8px rgba(0,0,0,.5)" }} />
+  ) : (
+    <span className="flex-none flex items-center justify-center uc-display" aria-hidden="true"
+      style={{ width: size, height: size, borderRadius: size * 0.225, fontSize: size * 0.42, background: "linear-gradient(160deg, var(--color-steel-2), var(--color-steel-3))", border: "2px solid var(--color-rust-lo)" }}>
+      {app.name.split(" ").map((w) => w[0]).slice(0, 2).join("")}
+    </span>
+  );
 
-const CARDS = [
-  ["Data integrity", <><ellipse cx="12" cy="5" rx="8" ry="3" /><path d="M4 5v14c0 1.7 3.6 3 8 3s8-1.3 8-3V5" /><path d="M4 12c0 1.7 3.6 3 8 3s8-1.3 8-3" /></>],
-  ["AI behavior", <><rect x="6" y="6" width="12" height="12" rx="2" /><rect x="9.5" y="9.5" width="5" height="5" /><path d="M9 2v4M15 2v4M9 18v4M15 18v4M2 9h4M2 15h4M18 9h4M18 15h4" /></>],
-  ["Security", <><path d="M12 2l8 3v6c0 5-3.5 9-8 11-4.5-2-8-6-8-11V5z" /><path d="M8.5 12l2.5 2.5 4.5-5" /></>],
-  ["Failure states", <><circle cx="12" cy="12" r="3" /><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M4.9 19.1L7 17M17 7l2.1-2.1" /></>],
-];
+// Left: big phone view of the selected app. Right: the four apps as small cards.
+function AppShowcase() {
+  const [sel, setSel] = useState(0);
+  const [shot, setShot] = useState(0);
+  const app = APPS[sel];
+  useEffect(() => {
+    if (app.shots.length < 2) return;
+    const t = setInterval(() => setShot((n) => (n + 1) % app.shots.length), 3500);
+    return () => clearInterval(t);
+  }, [sel, app.shots.length]);
+  const pick = (i) => { setSel(i); setShot(0); };
 
-const STEPS = [
-  ["Step one", "10:24:17"],
-  ["Step two", "10:24:19"],
-  ["Step three", "10:24:22"],
-  ["Step four", "10:24:23", true],
-];
-
-const METHOD = ["Understand", "Challenge", "Measure", "Trace", "Retest", "Report"];
-
-function Demo() {
-  const [open, setOpen] = useState(3);
   return (
-    <div className="uc-card" style={{ padding: 0, gap: 0, overflow: "hidden" }}>
-      <div className="flex justify-between items-center px-4 py-3 text-sm uc-ui" style={{ borderBottom: "1px solid var(--color-line)" }}>
-        <strong>Interactive demo</strong><span className="uc-muted">Lorem ipsum</span>
+    <section id="work" className="max-w-6xl mx-auto px-4 sm:px-6 py-14 grid lg:grid-cols-2 gap-8 items-center scroll-mt-20">
+      {/* big display */}
+      <div className="uc-card items-center gap-6 sm:gap-8" style={{ padding: "1.5rem", flexDirection: "row", flexWrap: "wrap", justifyContent: "center" }}>
+        <div className="uc-phone">
+          {app.shots.length ? (
+            app.shots.map((src, i) => (
+              <img key={src} src={src} alt={`${app.name} screenshot ${i + 1}`} loading={i ? "lazy" : "eager"} style={{ opacity: i === shot ? 1 : 0 }} />
+            ))
+          ) : (
+            <span className="uc-phone-empty"><AppIcon app={app} size={72} /><span className="uc-slab mt-3">Coming soon</span></span>
+          )}
+        </div>
+        <div className="flex flex-col gap-3 items-start" style={{ flex: "1 1 200px", minWidth: 0 }}>
+          <AppIcon app={app} size={64} />
+          <h2 className="uc-display" style={{ fontSize: "clamp(1.9rem, 4vw, 2.6rem)" }}>{app.name}</h2>
+          <div className="flex flex-wrap gap-2">
+            <span className="uc-stamp" style={{ color: "var(--color-steel)" }}>{app.platform}</span>
+            <span className="uc-stamp" style={{ color: app.live ? "var(--color-rust-hi)" : "var(--color-muted)" }}>{app.live ? "On the App Store" : "In review"}</span>
+          </div>
+          <p style={{ color: "var(--color-text-2)" }}>{app.summary}</p>
+          <div className="flex flex-wrap gap-3 pt-1">
+            {app.store && <Button href={app.store} variant="rust">Get it free <span aria-hidden="true">→</span></Button>}
+            <Button href={app.page} variant="ghost">Details</Button>
+          </div>
+          {app.shots.length > 1 && (
+            <div className="flex gap-2 pt-1" role="group" aria-label="Screenshots">
+              {app.shots.map((_, i) => (
+                <button key={i} type="button" onClick={() => setShot(i)} aria-label={`Screenshot ${i + 1}`} aria-pressed={i === shot}
+                  className="w-2.5 h-2.5 rounded-full" style={{ background: i === shot ? "var(--color-rust)" : "var(--color-line-2)" }} />
+              ))}
+            </div>
+          )}
+        </div>
       </div>
-      <div className="uc-log">
-        {STEPS.map(([label, time, bad], i) => (
-          <button key={label} type="button" className={bad ? "bad" : ""} aria-expanded={open === i} onClick={() => setOpen(open === i ? -1 : i)}>
-            <span className="flex items-center gap-3 text-[15px]">
-              <span className="w-6 h-6 rounded-full flex items-center justify-center text-[13px] font-bold text-white flex-none" style={{ background: bad ? "var(--color-rust)" : "var(--color-steel-2)" }}>{bad ? "!" : "✓"}</span>
-              <span className="flex-1" style={{ fontWeight: bad ? 700 : 400 }}>{label}</span>
-              <span className="font-mono text-[13px] uc-muted">{time}</span>
-              <span aria-hidden="true" className="uc-muted">{open === i ? "▴" : "▾"}</span>
+
+      {/* four app cards */}
+      <div className="grid gap-4 sm:grid-cols-2">
+        {APPS.map((a, i) => (
+          <button key={a.slug} type="button" onClick={() => pick(i)} aria-pressed={i === sel}
+            className="uc-card uc-app-card text-left cursor-pointer" style={i === sel ? { borderColor: "var(--color-rust)", boxShadow: "inset 0 0 0 1px var(--color-rust)" } : undefined}>
+            <span className="flex items-center gap-3">
+              <AppIcon app={a} size={40} />
+              <span className="uc-ui font-bold text-lg leading-tight">{a.name}</span>
             </span>
-            {open === i && <span className="pl-9 text-sm" style={{ color: "var(--color-text-2)" }}>{LOREM}</span>}
+            <span className="text-[15px]" style={{ color: "var(--color-text-2)" }}>{a.summary}</span>
+            <span className="uc-ui text-xs font-bold tracking-wider uppercase mt-auto" style={{ color: a.live ? "var(--color-rust-hi)" : "var(--color-muted)" }}>
+              {a.live ? "On the App Store" : "In review"}
+            </span>
           </button>
         ))}
       </div>
-    </div>
+    </section>
   );
 }
+
+const METHOD = ["Understand", "Challenge", "Measure", "Trace", "Retest", "Report"];
 
 export default function Home() {
   return (
@@ -75,22 +113,8 @@ export default function Home() {
         <p className="max-w-6xl mx-auto px-4 sm:px-6 py-4 text-center uc-slab text-lg sm:text-2xl" style={{ color: "var(--color-cream)" }}>{LOREM}</p>
       </div>
 
-      {/* 3. Looks right + demo | four cards */}
-      <section className="max-w-6xl mx-auto px-4 sm:px-6 py-14 grid lg:grid-cols-2 gap-8 items-start">
-        <div className="flex flex-col gap-4">
-          <h2 className="uc-display" style={{ fontSize: "clamp(2.25rem, 5vw, 3rem)" }}>Looks right.<br />Until you check.</h2>
-          <p className="text-lg" style={{ color: "var(--color-text-2)" }}>{LOREM}</p>
-          <Demo />
-        </div>
-        <div className="grid gap-4 sm:grid-cols-2">
-          {CARDS.map(([t, icon]) => (
-            <div key={t} className="uc-card">
-              <div className="flex items-center gap-3"><Ico>{icon}</Ico><h3 className="uc-ui font-bold text-xl">{t}</h3></div>
-              <p style={{ color: "var(--color-text-2)" }}>{LOREM}</p>
-            </div>
-          ))}
-        </div>
-      </section>
+      {/* 3. Apps */}
+      <AppShowcase />
 
       {/* 4. Method */}
       <section id="method" className="uc-iron-2 scroll-mt-20">
@@ -106,30 +130,6 @@ export default function Home() {
               </li>
             ))}
           </ol>
-        </div>
-      </section>
-
-      {/* 5. Featured work */}
-      <section id="work" className="max-w-6xl mx-auto px-4 sm:px-6 py-14 grid lg:grid-cols-[minmax(0,2fr)_minmax(0,3fr)] gap-10 items-center scroll-mt-20">
-        <div className="flex flex-col gap-4 items-start">
-          <p className="uc-kicker">Featured work</p>
-          <h2 className="uc-display" style={{ fontSize: "clamp(2rem, 4.5vw, 2.75rem)" }}>Congress Trade Detective</h2>
-          <p className="text-lg" style={{ color: "var(--color-text-2)" }}>{LOREM}</p>
-          <Button href="/apps/congress-trade-detective/" variant="rust">Explore this project <span aria-hidden="true">→</span></Button>
-        </div>
-        <div className="uc-card">
-          <div className="flex flex-wrap justify-between gap-3 text-sm uc-ui" style={{ borderBottom: "1px solid var(--color-line)" }}>
-            <div className="flex gap-5">
-              <span className="font-bold pb-2" style={{ borderBottom: "3px solid var(--color-steel)" }}>Disclosures</span>
-              <span className="uc-muted">News</span><span className="uc-muted">Evidence</span>
-            </div>
-          </div>
-          <div className="overflow-x-auto rounded" style={{ border: "1px solid var(--color-line)" }}>
-            <div className="grid grid-cols-5 gap-2 px-3 py-2 text-[13px] font-semibold uc-ui min-w-[480px]" style={{ background: "var(--color-iron-3)" }}>
-              <span>Date</span><span>Politician</span><span>Asset</span><span>Transaction</span><span>Source</span>
-            </div>
-            <p className="px-3 py-8 text-center text-sm uc-muted min-w-[480px]">{LOREM}</p>
-          </div>
         </div>
       </section>
 
