@@ -46,7 +46,7 @@ export const APPS = [
     tag: "Creative",
     live: false,
     summary: "Tap-to-fill and a freehand brush. No timers, no scores, no streaks.",
-    icon: null,
+    icon: `${IMG}/calm-coloring-book-icon.webp`,
     shots: [],
     page: "/apps/calm-coloring-book/",
     store: null,
