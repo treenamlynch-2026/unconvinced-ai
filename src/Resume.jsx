@@ -10,7 +10,7 @@ const STATS = [
   ["4", "iOS apps built with AI (2 live, 2 in review)"],
 ];
 
-const SKILLS = ["C#", "SQL", "SuiteScript / NetSuite", "JavaScript", "HTML/CSS", "ChatGPT", "Claude", "Prompt & context engineering", "AI output validation", "Edge-case testing", "Log analysis", "Sandbox & deployment validation"];
+const SKILLS = ["C#", "SQL", "JavaScript", "HTML/CSS", "SuiteScript / NetSuite", "ChatGPT", "Claude", "Prompt & context engineering", "AI output validation", "Edge-case testing", "Log analysis", "Sandbox & deployment validation"];
 
 const TIMELINE = [
   ["2025 – Present", "Founder, Independent Developer", "Unconvinced.", "Ships iOS apps built with AI: Snapshot Puzzle and The Cut Card are live; Congress Trade Detective and Calm Coloring Book are in review. Tests what the AI built before users do."],
@@ -40,9 +40,8 @@ export default function Resume() {
             <div>
               <p className="uc-kicker">Case file · Résumé</p>
               <h2 className="uc-display mt-2" style={{ fontSize: "clamp(2.4rem, 6vw, 4rem)" }}>Treena Lynch</h2>
-              <p className="uc-slab text-xl mt-1" style={{ color: "var(--color-text-2)" }}>Business Systems Developer · NetSuite · AI-Assisted Development · Spokane, WA</p>
+              <p className="uc-slab text-xl mt-1" style={{ color: "var(--color-text-2)" }}>Full-Stack Systems Developer · AI Integration &amp; Automation · AI-Assisted Development · Spokane, WA</p>
             </div>
-            <span className="uc-verified" aria-hidden="true">Verified</span>
           </div>
 
           <div className="grid sm:grid-cols-3 gap-px mt-8" style={{ background: "var(--color-line)" }}>
