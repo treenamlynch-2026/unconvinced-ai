@@ -12,13 +12,14 @@ export default function About() {
           <div className="space-y-4 text-lg leading-relaxed">
             <p>
               OPM: other people's money. It was the mantra at World Wide Group, the events and training organization
-              where I spent fifteen years on the back-end systems. I built the website back end and owned the native
+              where I spent 2004 to 2018 on the back-end systems. I built the website back end and owned the native
               Android app. Payments and bookings from the app ran through that same back end, so every front end worked
               from one set of numbers.
             </p>
             <p>
-              Accounting, ticketing, web, hotel API and event planners all had to reconcile, correctly and on time. In my
-              last six years there, that meant a payment pipeline handling roughly $10 million a year.
+              Accounting, ticketing, web, hotel API and event planners all had to reconcile, correctly and on time. My two-year
+              redesign of the ticketing system moved card processing into a WCF service that captured and balanced 10M+
+              transactions a year.
             </p>
             <p>AI changed how software gets built. It didn't change what production software owes the business.</p>
             <p className="uc-hand text-3xl" style={{ color: "var(--color-teal-2)", transform: "rotate(-2deg)" }}>
