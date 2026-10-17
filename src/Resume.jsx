@@ -1,22 +1,22 @@
 import { useEffect, useState } from "react";
 
-// Resume as a riveted "case file". Only confirmed facts are filled in; the rest is placeholder
+// Resume as a riveted "case file". Only confirmed facts are filled in; sourced from the resume PDF
 // until the real resume content is supplied. Download button turns on once the PDF exists.
 export const RESUME_PDF = "/Treena_Lynch_Resume.pdf";
-const LOREM = "Lorem ipsum dolor sit amet, consectetur adipiscing elit.";
 
 const STATS = [
-  ["20+", "years building production systems"],
+  ["20+", "years building and supporting production software"],
   ["10M+", "transactions a year captured and balanced"],
-  ["[#]", "placeholder stat"],
+  ["4", "iOS apps built with AI (2 live, 2 in review)"],
 ];
 
-const SKILLS = ["C#", "SQL", "JavaScript", "React", "SuiteScript / NetSuite", "WCF", "Async payment processing", "AI-assisted development"];
+const SKILLS = ["C#", "SQL", "SuiteScript / NetSuite", "JavaScript", "HTML/CSS", "ChatGPT", "Claude", "Prompt & context engineering", "AI output validation", "Edge-case testing", "Log analysis", "Sandbox & deployment validation"];
 
 const TIMELINE = [
-  ["[Years]", "[Role]", "[Company]", LOREM],
-  ["2004 – 2018", "[Role]", "World Wide Group", "Two-year redesign of the legacy ticketing system: third-party card processing moved into a WCF service with multi-stage async transaction states."],
-  ["[Years]", "[Role]", "[Company]", LOREM],
+  ["2025 – Present", "Founder, Independent Developer", "Unconvinced.", "Ships iOS apps built with AI: Snapshot Puzzle and The Cut Card are live; Congress Trade Detective and Calm Coloring Book are in review. Tests what the AI built before users do."],
+  ["2021 – 2025", "Business Systems / NetSuite Developer", "Cologix", "SuiteScripts for business operations; production issue diagnosis through log analysis and validation; sandbox and deployment testing."],
+  ["2018 – 2021", "NetSuite Developer", "Huppins", "Scripts for pricing, inventory and operational workflows; troubleshooting, validation and enhancements."],
+  ["2004 – 2018", "Programmer", "World Wide Group", "Two-year redesign of the legacy ticketing system: card processing moved into a WCF service with multi-stage async transaction states. Rebuilt a failing POV system."],
 ];
 
 function useExists(url) {
@@ -40,7 +40,7 @@ export default function Resume() {
             <div>
               <p className="uc-kicker">Case file · Résumé</p>
               <h2 className="uc-display mt-2" style={{ fontSize: "clamp(2.4rem, 6vw, 4rem)" }}>Treena Lynch</h2>
-              <p className="uc-slab text-xl mt-1" style={{ color: "var(--color-text-2)" }}>Full-stack systems developer · Spokane, WA</p>
+              <p className="uc-slab text-xl mt-1" style={{ color: "var(--color-text-2)" }}>Business Systems Developer · NetSuite · AI-Assisted Development · Spokane, WA</p>
             </div>
             <span className="uc-verified" aria-hidden="true">Verified</span>
           </div>
