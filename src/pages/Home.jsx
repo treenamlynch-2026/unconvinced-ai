@@ -89,6 +89,69 @@ function AppShowcase() {
   );
 }
 
+// The Room: Treena's open-source app where one human directs Claude and Iris in one shared chat.
+const ROOM_REPO = "https://github.com/treenamlynch-2026/the-room";
+const ROOM_FEATURES = [
+  ["Route every message", "Send to Claude, Iris or both with @claude, @iris, @both. Parallel replies never see each other until the next turn."],
+  ["Cross-review", "One click asks the other AI to review or implement a reply, optionally on its deeper model."],
+  ["Project Brain", "Canon rules, Decisions and pinned files ride along on every call, with an authority order for conflicts."],
+  ["Shared approvals", "Treena, Claude and Iris can each approve messages, log Decisions and add Canon. The human can remove anything."],
+  ["Real files", "Text, images, PDFs and video (frames + transcript) go to both models."],
+  ["Yours, locally", "Runs on 127.0.0.1 with your own API keys. Conversations and keys stay on your machine."],
+];
+const ROOM_CHAT = [
+  ["Treena", "@both — tighten the resume headline. No NetSuite in it.", "var(--color-cream)"],
+  ["Claude", "Full-Stack Systems Developer · AI Integration & Automation. Facts unchanged.", "var(--color-rust-hi)"],
+  ["Iris", "Agreed. Same facts go on LinkedIn — logging it as a Decision.", "var(--color-steel)"],
+];
+
+function TheRoom() {
+  return (
+    <section id="the-room" className="uc-iron scroll-mt-20" style={{ borderTop: "1px solid var(--color-line)" }}>
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 py-14 grid lg:grid-cols-2 gap-10 items-start">
+        <div className="flex flex-col gap-4">
+          <p className="uc-kicker">Open source · Free on GitHub</p>
+          <h2 className="uc-display" style={{ fontSize: "clamp(2.2rem, 5vw, 3.25rem)" }}>The Room</h2>
+          <p className="text-lg" style={{ color: "var(--color-text-2)" }}>
+            One human, two AIs, one conversation. I built The Room so I can direct Claude (Anthropic) and Iris
+            (an OpenAI GPT model) at the same time, in one shared project, with one set of rules they both follow.
+            It's how I run my own builds: one AI builds, the other pokes holes, and I decide.
+          </p>
+          <div className="flex flex-wrap gap-2">
+            {["Next.js", "TypeScript", "SQLite", "Anthropic API", "OpenAI API", "MIT license"].map((t) => <span key={t} className="uc-chip">{t}</span>)}
+          </div>
+          <div className="flex flex-wrap gap-3 pt-1">
+            <Button href={ROOM_REPO} variant="rust">Get it on GitHub <span aria-hidden="true">→</span></Button>
+          </div>
+          <p className="text-sm uc-muted">Independent project. Not affiliated with or endorsed by Anthropic or OpenAI. Bring your own API keys.</p>
+        </div>
+
+        <div className="flex flex-col gap-6">
+          <figure className="uc-card" style={{ padding: "1.25rem" }} aria-label="Illustration of a conversation in The Room">
+            <div className="flex flex-col gap-3">
+              {ROOM_CHAT.map(([who, text, color]) => (
+                <div key={who} className="flex flex-col gap-1">
+                  <span className="uc-ui text-xs font-bold tracking-widest uppercase" style={{ color }}>{who}</span>
+                  <span className="text-[15px]" style={{ color: "var(--color-text-2)" }}>{text}</span>
+                </div>
+              ))}
+            </div>
+            <figcaption className="text-xs uc-muted mt-4">Illustration of a round in The Room.</figcaption>
+          </figure>
+          <ul className="grid sm:grid-cols-2 gap-5">
+            {ROOM_FEATURES.map(([t, d]) => (
+              <li key={t} className="flex flex-col gap-1">
+                <strong className="uc-ui">{t}</strong>
+                <span className="text-[15px] uc-muted">{d}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    </section>
+  );
+}
+
 const METHOD = ["Understand", "Challenge", "Measure", "Trace", "Retest", "Report"];
 
 export default function Home() {
@@ -119,6 +182,9 @@ export default function Home() {
 
       {/* 3. Apps */}
       <AppShowcase />
+
+      {/* 3b. The Room */}
+      <TheRoom />
 
       {/* 4. Method */}
       <section id="method" className="uc-iron-2 scroll-mt-20">

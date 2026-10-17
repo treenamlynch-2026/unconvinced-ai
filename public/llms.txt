@@ -7,3 +7,6 @@
 - [Calm Coloring Book for Adults](https://unconvinced.ai/apps/calm-coloring-book/): Calm Coloring Book for Adults is a free iPhone coloring app with tap-to-fill and a freehand brush. No timers, no scores, no streaks, and no account required.
 - [Congress Trade Detective](https://unconvinced.ai/apps/congress-trade-detective/): Congress Trade Detective is a free iPhone app that tracks stock trades members of Congress disclose under the STOCK Act. It shows who traded, what, when, and how the stock moved before and after the trade became public. No login and no tracking.
 - [The Cut Card](https://unconvinced.ai/apps/the-cut-card/): The Cut Card is a free blackjack trainer for iPhone. Play full multi-deck shoes with real cut-card reshuffles, always-on basic strategy, and a shoe tracker for practicing card counting. Points only, no real money.
+
+## Open source
+- [The Room](https://github.com/treenamlynch-2026/the-room): The Room is a free, open-source (MIT), self-hosted chat app built by Treena Lynch where one human directs two AI collaborators, Claude (Anthropic) and Iris (an OpenAI GPT model), in one shared project conversation with shared rules, decisions and files. Runs locally with your own API keys.
