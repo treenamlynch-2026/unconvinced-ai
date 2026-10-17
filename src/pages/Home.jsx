@@ -123,9 +123,9 @@ function TheRoom() {
 
         <div className="flex flex-col gap-6">
           <figure className="uc-card" style={{ padding: 0, overflow: "hidden" }}>
-            <img src={ROOM_SHOT} alt="The Room in split view: Iris and Claude answering side by side, with the Project Brain panel on the right" loading="lazy" width="1600" height="763"
+            <img src={ROOM_SHOT} alt="The Room in split view: Iris and Claude answering side by side, with the Project Brain panel on the right" loading="lazy" width="1568" height="732"
               style={{ display: "block", width: "100%", height: "auto" }} />
-            <figcaption className="text-xs uc-muted px-4 py-2">The real thing: Iris and Claude side by side in Split view, Project Brain on the right.</figcaption>
+            <figcaption className="text-xs uc-muted px-4 py-2">The real thing: I ask who owns adding The Room to this site; Iris and Claude split the work and log it as a Decision.</figcaption>
           </figure>
           <ul className="grid sm:grid-cols-2 gap-5">
             {ROOM_FEATURES.map(([t, d]) => (
