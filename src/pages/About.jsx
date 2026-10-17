@@ -17,7 +17,8 @@ export default function About() {
               from one set of numbers.
             </p>
             <p>
-              Accounting, ticketing, web, hotel API and event planners all had to reconcile, correctly and on time. My two-year
+              Accounting, ticketing, web, hotel API and event planners all had to reconcile, correctly and on time. In my
+              last six years there, that meant a payment pipeline handling roughly $10 million a year. My two-year
               redesign of the ticketing system moved card processing into a WCF service that captured and balanced 10M+
               transactions a year.
             </p>
