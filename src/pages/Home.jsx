@@ -4,8 +4,6 @@ import { Link } from "../router.jsx";
 import { APPS } from "../apps.js";
 import Resume from "../Resume.jsx";
 
-// Layout = Iris's page mockup, section for section. Copy is placeholder until real copy is set.
-const LOREM = "Lorem ipsum dolor sit amet, consectetur adipiscing elit.";
 
 // Small app icon; placeholder tile until the app has real store art.
 const AppIcon = ({ app, size = 48 }) =>
@@ -152,7 +150,14 @@ function TheRoom() {
   );
 }
 
-const METHOD = ["Understand", "Challenge", "Measure", "Trace", "Retest", "Report"];
+const METHOD = [
+  ["Understand", "Start with the people, the workflow, and the problem worth solving."],
+  ["Challenge", "Ask the awkward questions. Try the inputs nobody planned for."],
+  ["Measure", "Define what working means, then check the result against it."],
+  ["Trace", "Follow the logs and the data to find where things went sideways."],
+  ["Retest", "Fix the problem, repeat the test, and check what else changed."],
+  ["Report", "Explain what works, what needs attention, and what comes next."],
+];
 
 export default function Home() {
   return (
@@ -165,9 +170,9 @@ export default function Home() {
               Build it? Poke it? Support it?<br />
               <span style={{ color: "var(--color-steel)" }}>I can do that!</span>
             </h1>
-            <p className="text-lg" style={{ color: "var(--color-text-2)" }}>{LOREM}</p>
+            <p className="text-lg" style={{ color: "var(--color-text-2)" }}>I’m Treena, a full-stack systems developer who builds apps, connects AI to real workflows, and tests what comes out. Available for freelance AI integration, automation, development, and support.</p>
             <div className="flex flex-wrap gap-3">
-              <Button href="#work" variant="cream">Lorem ipsum <span aria-hidden="true">→</span></Button>
+              <Button href="#work" variant="cream">See my work <span aria-hidden="true">→</span></Button>
               <Button to="/about" variant="ghost">Meet Treena</Button>
             </div>
           </div>
@@ -177,7 +182,7 @@ export default function Home() {
 
       {/* 2. Strip */}
       <div className="uc-plate-band">
-        <p className="max-w-6xl mx-auto px-4 sm:px-6 py-4 text-center uc-slab text-lg sm:text-2xl" style={{ color: "var(--color-cream)" }}>{LOREM}</p>
+        <p className="max-w-6xl mx-auto px-4 sm:px-6 py-4 text-center uc-slab text-lg sm:text-2xl" style={{ color: "var(--color-cream)" }}>20+ years solving business problems. Still curious. Still checking the results.</p>
       </div>
 
       {/* 3. Apps */}
@@ -190,13 +195,13 @@ export default function Home() {
       <section id="method" className="uc-iron-2 scroll-mt-20">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 py-14">
           <h2 className="uc-display" style={{ fontSize: "clamp(2rem, 4.5vw, 2.75rem)" }}>The Unconvinced. Method</h2>
-          <p className="mt-2 text-lg" style={{ color: "var(--color-text-2)" }}>{LOREM}</p>
+          <p className="mt-2 text-lg" style={{ color: "var(--color-text-2)" }}>AI helps me build faster. Experience tells me where to look twice.</p>
           <ol className="mt-8 grid gap-7" style={{ gridTemplateColumns: "repeat(auto-fit, minmax(150px, 1fr))" }}>
-            {METHOD.map((t, i) => (
+            {METHOD.map(([t, description], i) => (
               <li key={t} className="flex flex-col gap-2">
                 <span className="uc-step">{String(i + 1).padStart(2, "0")}</span>
                 <strong className="uc-ui text-lg">{t}</strong>
-                <span className="text-[15px] uc-muted">{LOREM}</span>
+                <span className="text-[15px] uc-muted">{description}</span>
               </li>
             ))}
           </ol>
@@ -210,14 +215,14 @@ export default function Home() {
       <section className="uc-iron-2" style={{ borderTop: "1px solid var(--color-line)" }}>
         <div className="max-w-6xl mx-auto px-4 sm:px-6 py-12 grid gap-8" style={{ gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))" }}>
           {[
-            ["/museum", "The Failure Museum"],
-            ["/lab", "Unconvinced. Lab"],
-            ["/about", "About Treena"],
-            [null, "Hal merch"],
-          ].map(([to, t]) => (
+            ["/museum", "The Failure Museum", "A home for lessons from things that break. Case files are in the works."],
+            ["/lab", "Unconvinced. Lab", "Experiments, development notes, and questions worth testing. More coming soon."],
+            ["/about", "About Treena", "The developer behind the apps: practical experience, a curious mind, and a habit of asking why."],
+            [null, "Hal merch", "For anyone whose first response is ‘I have questions.’ In the works."],
+          ].map(([to, t, description]) => (
             <div key={t} className="flex flex-col gap-2 items-start">
               <h3 className="uc-ui font-bold text-xl">{t}</h3>
-              <p className="uc-muted">{LOREM}</p>
+              <p className="uc-muted">{description}</p>
               {to ? <Link to={to} className="uc-btn uc-btn-ghost mt-1">Open <span aria-hidden="true">→</span></Link>
                   : <span className="uc-btn uc-btn-ghost mt-1" aria-disabled="true">Coming soon</span>}
             </div>

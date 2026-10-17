@@ -124,7 +124,7 @@ export function Layout({ title, children }) {
 
       <footer className="uc-foot uc-iron">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 py-12 flex flex-col items-center text-center gap-5">
-          <p className="uc-display" style={{ fontSize: "clamp(1.75rem, 4vw, 2.25rem)" }}>Lorem ipsum dolor sit amet.</p>
+          <p className="uc-display" style={{ fontSize: "clamp(1.75rem, 4vw, 2.25rem)" }}>Have a project, a stubborn bug, or a workflow that needs help?</p>
           <Button to="/contact" variant="cream">Contact <span aria-hidden="true">→</span></Button>
           <div className="w-full h-px my-3" style={{ background: "var(--color-line)" }} />
           <Wordmark size="2.25rem" />
