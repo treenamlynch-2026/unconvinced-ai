@@ -97,11 +97,8 @@ const ROOM_FEATURES = [
   ["Real files", "Text, images, PDFs and video (frames + transcript) go to both models."],
   ["Yours, locally", "Runs on 127.0.0.1 with your own API keys. Conversations and keys stay on your machine."],
 ];
-const ROOM_CHAT = [
-  ["Treena", "@both — tighten the resume headline. No NetSuite in it.", "var(--color-cream)"],
-  ["Claude", "Full-Stack Systems Developer · AI Integration & Automation. Facts unchanged.", "var(--color-rust-hi)"],
-  ["Iris", "Agreed. Same facts go on LinkedIn — logging it as a Decision.", "var(--color-steel)"],
-];
+// Real screenshot of The Room. When the screen-recorded clip arrives, swap this figure to a muted, looping <video>.
+const ROOM_SHOT = "/media/the-room-screenshot.webp";
 
 function TheRoom() {
   return (
@@ -125,16 +122,10 @@ function TheRoom() {
         </div>
 
         <div className="flex flex-col gap-6">
-          <figure className="uc-card" style={{ padding: "1.25rem" }} aria-label="Illustration of a conversation in The Room">
-            <div className="flex flex-col gap-3">
-              {ROOM_CHAT.map(([who, text, color]) => (
-                <div key={who} className="flex flex-col gap-1">
-                  <span className="uc-ui text-xs font-bold tracking-widest uppercase" style={{ color }}>{who}</span>
-                  <span className="text-[15px]" style={{ color: "var(--color-text-2)" }}>{text}</span>
-                </div>
-              ))}
-            </div>
-            <figcaption className="text-xs uc-muted mt-4">Illustration of a round in The Room.</figcaption>
+          <figure className="uc-card" style={{ padding: 0, overflow: "hidden" }}>
+            <img src={ROOM_SHOT} alt="The Room in split view: Iris and Claude answering side by side, with the Project Brain panel on the right" loading="lazy" width="1600" height="763"
+              style={{ display: "block", width: "100%", height: "auto" }} />
+            <figcaption className="text-xs uc-muted px-4 py-2">The real thing: Iris and Claude side by side in Split view, Project Brain on the right.</figcaption>
           </figure>
           <ul className="grid sm:grid-cols-2 gap-5">
             {ROOM_FEATURES.map(([t, d]) => (
