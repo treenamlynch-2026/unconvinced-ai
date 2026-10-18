@@ -18,10 +18,32 @@ export default function About() {
             </p>
             <p>
               Accounting, ticketing, web, hotel API and event planners all had to reconcile, correctly and on time. In my
-              last six years there, that meant a payment pipeline handling roughly $10 million a year. My two-year
-              redesign of the ticketing system moved card processing into a WCF service that captured and balanced 10M+
-              transactions a year.
+              last six years there, that meant a payment pipeline handling roughly $10 million a year.
             </p>
+            <p>
+              Over two years, I re-architected a legacy ticketing system that collapsed under first-hour sales load,
+              fixing multiple core problems:
+            </p>
+            <ul className="list-disc pl-6 space-y-2">
+              <li>
+                <strong>Timing:</strong> I took card processing out of checkout entirely. Orders were captured
+                instantly as "pending" and charged in batches afterward through an admin application I built for staff.
+              </li>
+              <li>
+                <strong>Step tracking:</strong> I made every transaction record each status it passed through
+                (Authorizing → Authorized → Capturing → Captured), so any failure could be traced to the exact step
+                where it happened.
+              </li>
+              <li>
+                <strong>Payment service:</strong> I wrote the WCF service that handled charging twice, once for each of
+                the processor's two versions (1.0 and 2.0).
+              </li>
+              <li>
+                <strong>Database:</strong> I replaced the separate Cart and Order tables, which had to be reconciled by
+                hand after every meltdown, with one unified table and an isCart flag.
+              </li>
+            </ul>
+            <p>The finished system captured and balanced 10M+ transactions every year.</p>
             <p>AI changed how software gets built. It didn't change what production software owes the business.</p>
             <p className="uc-hand text-3xl" style={{ color: "var(--color-teal-2)", transform: "rotate(-2deg)" }}>
               Same process. Different lipstick.
