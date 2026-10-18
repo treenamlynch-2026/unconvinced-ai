@@ -1,0 +1,36 @@
+{
+  "name": "TREENA M. LYNCH",
+  "contact": "Spokane, WA  |  inquiry@unconvinced.ai  |  unconvinced.ai",
+  "headline": "Full-Stack Systems Developer  ·  AI Integration & Automation  ·  AI-Assisted Development & Testing",
+  "profile": "Full-stack systems developer with 20+ years building, debugging and supporting production software, from payment processing and ticketing to business-system automation. Now builds and ships apps with generative AI (ChatGPT, Claude), then tests what the AI built against requirements, edge cases and data integrity before it reaches users.",
+  "skills": [
+    ["Development", "C# • SQL • JavaScript • HTML/CSS • Relational data • Business automation • SuiteScript / NetSuite"],
+    ["AI-assisted delivery", "ChatGPT • Claude • Prompt and context engineering • AI-directed implementation • AI output validation"],
+    ["Quality & support", "Edge-case and failure testing • Acceptance criteria • Log analysis • Issue triage • Sandbox and deployment validation"]
+  ],
+  "experience": [
+    {
+      "heading": "Unconvinced.  |  Founder, Independent Developer", "dates": "2025–Present",
+      "bullets": [
+        "Ships consumer iOS apps built with AI: <b>Snapshot Puzzle</b> and <b>The Cut Card</b> (live on the App Store); <b>Congress Trade Detective</b> and <b>Calm Coloring Book</b> (in App Store review); Blackjack Free Play.",
+        "Directs generative AI through requirements, implementation, testing and release; owns workflows, acceptance criteria and release priorities.",
+        "Tests AI-generated code against requirements, edge cases, data integrity and failure modes; uses logs to investigate behavior and challenge production-readiness assumptions.",
+        "Built CongressTradeDetective.com and its long- and short-form content operation, using AI for research, scripting, visuals and workflow automation under editorial review.",
+        "Designed and validated a Fourthwall payment proof of concept for a direct product-to-payment flow without a full e-commerce platform."
+      ]
+    },
+    {
+      "heading": "Cologix  |  Business Systems / NetSuite Developer", "dates": "2021–2025",
+      "bullets": [
+        "Developed and maintained SuiteScripts supporting business operations and workflows.",
+        "Diagnosed production issues across multiple environments through log analysis, testing and system validation; supported triage, debugging and documentation.",
+        "Ran sandbox testing and deployment validation for changes; worked across teams on system reliability, reporting and data accuracy."
+      ]
+    },
+    {
+      "heading": "Huppins  |  NetSuite Developer", "dates": "2018–2021",
+      "bullets": ["Built and maintained SuiteScripts for pricing, inventory and operational workflows; supported troubleshooting, validation and system enhancements."]
+    }
+  ],
+  "education": ["B.S., Information Technology  |  American InterContinental University", "A.A.S., Information Technology  |  Spokane Community College"]
+}

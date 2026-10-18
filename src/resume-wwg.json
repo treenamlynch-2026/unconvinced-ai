@@ -1,0 +1,8 @@
+{
+  "heading": "World Wide Group — Programmer, 2004-2018 (15 years)",
+  "bullets": [
+    "Sole developer behind a suite of in-house applications end to end: the point-of-sale system and dedicated apps for each major event (Family Reunion, Spring Fling, FED and others), the web services behind them, and all the SQL and database design they ran on. Owned every layer, and over 15 years modernized my own code as the platform evolved.",
+    "Re-architected the legacy ticketing system over two years: decoupled payment from checkout so first-hour sales no longer overwhelmed the card processor — orders captured instantly as pending, then batch-charged through an admin app I built — with per-step status tracking (Authorizing to Authorized to Capturing to Captured) and a unified Cart/Order schema. Captured and balanced 10M+ transactions and $10M+ in payments a year.",
+    "Rebuilt a failing POV system's local application and infrastructure."
+  ]
+}

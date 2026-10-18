@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import worldWideGroup from "./resume-wwg.json";
 
 // Resume as a riveted "case file". Only confirmed facts are filled in; sourced from the resume PDF
 // until the real resume content is supplied. Download button turns on once the PDF exists.
@@ -16,7 +17,7 @@ const TIMELINE = [
   ["2025 – Present", "Founder, Independent Developer", "Unconvinced.", "Ships iOS apps built with AI: Snapshot Puzzle and The Cut Card are live; Congress Trade Detective and Calm Coloring Book are in review. Tests what the AI built before users do."],
   ["2021 – 2025", "Business Systems / NetSuite Developer", "Cologix", "SuiteScripts for business operations; production issue diagnosis through log analysis and validation; sandbox and deployment testing."],
   ["2018 – 2021", "NetSuite Developer", "Huppins", "Scripts for pricing, inventory and operational workflows; troubleshooting, validation and enhancements."],
-  ["2004 – 2018", "Programmer", "World Wide Group", "Two-year re-architecture of the legacy ticketing system: decoupled card processing from checkout (pending orders, batch charging via an admin app I built), per-step transaction status tracking (Authorizing → Captured), WCF payment service written for two processor versions, unified Cart/Order schema. 10M+ transactions a year. Rebuilt a failing POV system."],
+  ["2004-2018 (15 years)", "Programmer", "World Wide Group", worldWideGroup.bullets],
 ];
 
 function useExists(url) {
@@ -57,9 +58,20 @@ export default function Resume() {
             <ol className="uc-timeline">
               {TIMELINE.map(([y, role, co, d], i) => (
                 <li key={i}>
-                  <span className="uc-ui text-xs font-bold tracking-widest" style={{ color: "var(--color-steel)" }}>{y}</span>
-                  <h3 className="uc-ui font-bold text-lg mt-1">{role} <span className="uc-muted font-normal">· {co}</span></h3>
-                  <p className="mt-1 text-[15px]" style={{ color: "var(--color-text-2)" }}>{d}</p>
+                  {Array.isArray(d) ? (
+                    <>
+                      <h3 className="uc-ui font-bold text-lg mt-1">{worldWideGroup.heading}</h3>
+                      <ul className="mt-2 list-disc pl-5 space-y-2 text-[15px]" style={{ color: "var(--color-text-2)" }}>
+                        {d.map((bullet) => <li key={bullet}>{bullet}</li>)}
+                      </ul>
+                    </>
+                  ) : (
+                    <>
+                      <span className="uc-ui text-xs font-bold tracking-widest" style={{ color: "var(--color-steel)" }}>{y}</span>
+                      <h3 className="uc-ui font-bold text-lg mt-1">{role} <span className="uc-muted font-normal">· {co}</span></h3>
+                      <p className="mt-1 text-[15px]" style={{ color: "var(--color-text-2)" }}>{d}</p>
+                    </>
+                  )}
                 </li>
               ))}
             </ol>
