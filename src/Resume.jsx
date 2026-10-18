@@ -16,7 +16,7 @@ const TIMELINE = [
   ["2025 – Present", "Founder, Independent Developer", "Unconvinced.", "Ships iOS apps built with AI: Snapshot Puzzle and The Cut Card are live; Congress Trade Detective and Calm Coloring Book are in review. Tests what the AI built before users do."],
   ["2021 – 2025", "Business Systems / NetSuite Developer", "Cologix", "SuiteScripts for business operations; production issue diagnosis through log analysis and validation; sandbox and deployment testing."],
   ["2018 – 2021", "NetSuite Developer", "Huppins", "Scripts for pricing, inventory and operational workflows; troubleshooting, validation and enhancements."],
-  ["2004 – 2018", "Programmer", "World Wide Group", "Two-year redesign of the legacy ticketing system: card processing moved into a WCF service with multi-stage async transaction states. Rebuilt a failing POV system."],
+  ["2004 – 2018", "Programmer", "World Wide Group", "Two-year re-architecture of the legacy ticketing system: decoupled card processing from checkout (pending orders, batch charging via an admin app I built), per-step transaction status tracking (Authorizing → Captured), WCF payment service written for two processor versions, unified Cart/Order schema. 10M+ transactions a year. Rebuilt a failing POV system."],
 ];
 
 function useExists(url) {
