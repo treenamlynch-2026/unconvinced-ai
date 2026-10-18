@@ -106,11 +106,7 @@ export function Layout({ title, children }) {
       <header className="uc-mast">
         <div className="uc-mast-in">
           <Link to="/" aria-label="Unconvinced. home" className="flex items-center gap-2">
-            <Magnifier scale={0.22} handle={false} />
-            <span className="flex flex-col">
-              <Wordmark size="1.75rem" />
-              <span className="uc-ui text-[10px] font-bold tracking-[.18em]" style={{ color: "var(--color-muted)" }}>BUILD IT? POKE IT? SUPPORT IT?</span>
-            </span>
+            <img src="/images/unconvinced-logo.png" alt="Unconvinced. — Build it? Poke it? Support it?" width="415" height="224" className="h-14 sm:h-[72px] w-auto" />
           </Link>
           <nav className="uc-mast-nav" aria-label="Primary">
             {NAV.map(([to, label]) => <NavLink key={to} to={to} label={label} />)}
