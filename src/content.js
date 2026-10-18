@@ -1,7 +1,7 @@
 // Loads /content/<section>/<slug>.md at build time. Frontmatter: simple "key: value" lines.
 const files = import.meta.glob("/content/**/*.md", { query: "?raw", import: "default", eager: true });
 
-export const SECTIONS = { cases: "Case studies", museum: "Failure Museum", lab: "Unconvinced Lab" };
+export const SECTIONS = { cases: "Case studies", lab: "Unconvinced Lab" };
 
 export const slugify = (s) => s.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
 
