@@ -122,7 +122,7 @@ export function Layout({ title, children }) {
           <p className="uc-display" style={{ fontSize: "clamp(1.75rem, 4vw, 2.25rem)" }}>Have a project, a stubborn bug, or a workflow that needs help?</p>
           <Button to="/contact" variant="cream">Contact <span aria-hidden="true">→</span></Button>
           <div className="w-full h-px my-3" style={{ background: "var(--color-line)" }} />
-          <Wordmark size="2.25rem" />
+          <img src="/images/unconvinced-logo-mark.png" alt="Unconvinced." width="415" height="184" loading="lazy" className="h-20 sm:h-24 w-auto" />
           <p className="uc-slab uc-muted">Build it? Poke it? Support it? — I can do that!</p>
         </div>
       </footer>
