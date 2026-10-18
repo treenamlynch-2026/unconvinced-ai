@@ -202,11 +202,10 @@ export default function Home() {
       {/* 5. Resume */}
       <Resume />
 
-      {/* 6. Museum / Lab / About + Hal merch */}
+      {/* 6. Lab / About + Hal merch */}
       <section className="uc-iron-2" style={{ borderTop: "1px solid var(--color-line)" }}>
         <div className="max-w-6xl mx-auto px-4 sm:px-6 py-12 grid gap-8" style={{ gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))" }}>
           {[
-            ["/museum", "The Failure Museum", "A home for lessons from things that break. Case files are in the works."],
             ["/lab", "Unconvinced. Lab", "Experiments, development notes, and questions worth testing. More coming soon."],
             ["/about", "About Treena", "The developer behind the apps: practical experience, a curious mind, and a habit of asking why."],
             [null, "Hal merch", "For anyone whose first response is ‘I have questions.’ In the works."],
