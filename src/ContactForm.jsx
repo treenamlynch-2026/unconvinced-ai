@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 // Web3Forms public access key (designed to be visible in client code; not a secret).
-const ACCESS_KEY = "REPLACE_WITH_WEB3FORMS_KEY";
+const ACCESS_KEY = "e86d0ca9-4f90-41fb-9cd9-1ad6997165dc";
 const FALLBACK = "inquiry@unconvinced.ai";
 // The form renders only once a real key is set; until then the Contact page shows email only.
 export const FORM_READY = !ACCESS_KEY.startsWith("REPLACE");
