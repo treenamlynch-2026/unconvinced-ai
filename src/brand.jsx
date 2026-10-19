@@ -86,7 +86,6 @@ const NAV = [
   ["/#method", "Method"],
   ["/#work", "Work"],
   ["/#resume", "Résumé"],
-  ["/lab", "Lab"],
   ["/about", "About"],
 ];
 

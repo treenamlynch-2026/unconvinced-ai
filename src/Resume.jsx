@@ -82,13 +82,14 @@ export default function Resume() {
                   {SKILLS.map((s) => <li key={s} className="uc-chip">{s}</li>)}
                 </ul>
               </div>
+              <p className="uc-ui font-bold" style={{ color: "var(--color-cream)" }}>Open to full-time (salaried) roles or contract work.</p>
               <div className="flex flex-wrap gap-3">
                 {hasPdf ? (
                   <a href={RESUME_PDF} className="uc-btn uc-btn-rust" download>Download résumé (PDF) <span aria-hidden="true">↓</span></a>
                 ) : (
                   <span className="uc-btn uc-btn-ghost" aria-disabled="true">Résumé PDF · coming soon</span>
                 )}
-                <a href="/contact" className="uc-btn uc-btn-ghost">Hire me</a>
+                <a href="/contact" className="uc-btn uc-btn-ghost">Hire me · salary or contract</a>
               </div>
             </div>
           </div>
