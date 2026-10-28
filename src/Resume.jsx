@@ -8,13 +8,13 @@ export const RESUME_PDF = "/Treena_Lynch_Resume.pdf";
 const STATS = [
   ["20+", "years building and supporting production software"],
   ["10M+", "transactions a year captured and balanced"],
-  ["4", "iOS apps built with AI (2 live, 2 in review)"],
+  ["4", "iOS apps built with AI, all live on the App Store"],
 ];
 
 const SKILLS = ["C#", "SQL", "JavaScript", "HTML/CSS", "SuiteScript / NetSuite", "ChatGPT", "Claude", "Prompt & context engineering", "AI output validation", "Edge-case testing", "Log analysis", "Sandbox & deployment validation"];
 
 const TIMELINE = [
-  ["2025 – Present", "Founder, Independent Developer", "Unconvinced.", "Ships iOS apps built with AI: Snapshot Puzzle and The Cut Card are live; Congress Trade Detective and Calm Coloring Book are in review. Tests what the AI built before users do."],
+  ["2025 – Present", "Founder, Independent Developer", "Unconvinced.", "Ships iOS apps built with AI: Snapshot Puzzle, The Cut Card, Congress Trade Detective and Calm Coloring Book are live on the App Store. Tests what the AI built before users do."],
   ["2021 – 2025", "Business Systems / NetSuite Developer", "Cologix", "SuiteScripts for business operations; production issue diagnosis through log analysis and validation; sandbox and deployment testing."],
   ["2018 – 2021", "NetSuite Developer", "Huppins", "Scripts for pricing, inventory and operational workflows; troubleshooting, validation and enhancements."],
   ["2004-2018 (15 years)", "Programmer", "World Wide Group", worldWideGroup.bullets],

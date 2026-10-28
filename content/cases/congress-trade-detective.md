@@ -1,6 +1,6 @@
 ---
 title: Congress Trade Detective
-summary: An AI-built iOS app tracking congressional stock trades, currently in App Store review.
+summary: An AI-built iOS app tracking congressional stock trades, live on the App Store since October 2026.
 date: 2026-10-05
 draft: true
 ---
