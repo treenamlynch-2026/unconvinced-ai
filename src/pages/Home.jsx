@@ -186,13 +186,15 @@ const METHOD = [
 ];
 
 export default function Home() {
+  // Rule: tagline text shows only when the hero image is missing/fails; the image carries the tagline.
+  const [heroImgOk, setHeroImgOk] = useState(true);
   return (
     <Layout>
       {/* 1. Hero */}
       <section className="uc-iron">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 py-14 sm:py-20 grid lg:grid-cols-2 gap-10 items-center">
           <div className="flex flex-col gap-5 order-2 lg:order-1">
-            <h1 className="uc-display" style={{ fontSize: "clamp(2.5rem, 6vw, 4rem)" }}>
+            <h1 className={heroImgOk ? "sr-only" : "uc-display"} style={heroImgOk ? undefined : { fontSize: "clamp(2.5rem, 6vw, 4rem)" }}>
               It passed every test<br />
               <span style={{ color: "var(--color-steel)" }}>it wrote for itself.</span>
             </h1>
@@ -202,7 +204,7 @@ export default function Home() {
               <Button to="/about" variant="ghost">Meet Treena</Button>
             </div>
           </div>
-          <div className="order-1 lg:order-2 flex justify-center"><img src="/images/unconvinced-logo-tagline.png" alt="Unconvinced. — It passed every test it wrote for itself." width="1000" height="515" className="w-full max-w-[440px] h-auto" /></div>
+          {heroImgOk && <div className="order-1 lg:order-2 flex justify-center"><img onError={() => setHeroImgOk(false)} src="/images/unconvinced-logo-tagline.png" alt="Unconvinced. — It passed every test it wrote for itself." width="1000" height="515" className="w-full max-w-[440px] h-auto" /></div>}
         </div>
       </section>
 
