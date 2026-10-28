@@ -2,7 +2,7 @@
 name: tiny-worlds-asmr-studio
 description: Plan, prompt, and quality-check coherent ASMR micro-videos for miniature construction, food assembly, eating, edible illusions, and Hal Cooks robot-character shorts. Use for AI cooking/mukbang, tiny-world builds, satisfying tactile ASMR, or Flow/Veo scene prompts. Preserves character canon, continuity, audio, and generation credits.
 metadata:
-  version: "1.2.0-draft"
+  version: "1.2.1"
   owners: "Iris = creative content and production rules; Claude = technical integration and review"
   source: "github.com/treenamlynch-2026/unconvinced-ai/.claude/skills/tiny-worlds-asmr-studio"
 ---
@@ -22,7 +22,7 @@ Activate for prompts about AI cooking, mukbang, macro food, tiny-world construct
 
 ## Workflow
 1. **Normalize intent.** Extract subject, mode, platform, aspect ratio, duration, character IDs, precise character references, staging, camera, action, sound, closing payoff, and model/provider. Infer sensible defaults, but preserve explicit instructions.
-2. **Resolve contradictions before rendering.** The character's anatomy and exact reference take priority over generic template props. Example: Hal's THREE FINGERS must remain visible; do not render two generic human hands in black nitrile gloves unless explicitly requested. “Tiny cabin in a globe” is a miniature build, not a food item, and must not end in someone eating it.
+2. **Resolve contradictions before rendering.** The character's anatomy and exact reference take priority over generic template props. Example: Hal's canon hands (three fingers + thumb) must remain visible; do not render two generic human hands in black nitrile gloves unless explicitly requested. “Tiny cabin in a globe” is a miniature build, not a food item, and must not end in someone eating it.
 3. **Choose a single visual physics contract.** FOOD is edible, MINIATURE is not edible, EDIBLE_ILLUSION may look nonfood while being edible, and GLASS is glass and should not be chewed or swallowed. For physically ambiguous concepts, describe the object explicitly.
 4. **Design 3-part payoff.** Scene A: HOOK + precise assembly (or prep). Scene B: PAYOFF/action (eating, reveal, finishing construction). Scene C: ORIGINAL OPTIONAL ENDING, e.g. camera-locked beauty hold, satisfying final sound, comedy reaction, or loop-safe reset. For a 10–20s video, combine where practical. Never tack on an unearned extra scene.
 5. **Create a reference bible** (see `references/reference-bible.md`), plus a planned frame ledger for every shot. If a character canon asset is unavailable, say so and mark `CANON UNVERIFIED`. Do not claim exact identity lock without the actual reference image.
@@ -33,25 +33,35 @@ Activate for prompts about AI cooking, mukbang, macro food, tiny-world construct
 10. **Package** storyboard, reference inventory, scene prompts, negative prompts, keyframe descriptions, audio plan, title/hook, provider settings (if known), QA checklist and export handoff. Delivery: save files to `C:\Users\Administrator\Desktop\AI DOWNLOAD FOLDER\Claude` in one clearly named project subfolder, or deliver one zip in chat with a visible download option. If that folder is unreachable, say so and name the files. Never claim a file was saved somewhere it was not.
 
 ## Canon / characters
-- Hal: Only use the user's actual `Canon Hal.png` or an explicitly approved canon image. Short stocky aged robot, square weathered head, barrel chest, spring neck, short legs, chunky oversized feet, pale blue/cream/rust patina, white eyes with brown irises, three-finger hands; viewer-left shoe orange, viewer-right shoe blue (written canon; PENDING master-image verification). Top hatch for Kitt. Do not substitute tall, mostly-blue “cousin” robot. Emotions must be achieved within locked proportions.
+- Hal: Only use the user's actual Hal character reference sheet (front / three-quarter / side / back + expressions) or an explicitly approved canon image. Short, stocky, about 2.5 heads tall; the head is nearly as wide as the torso.
+  - **Head:** big riveted CUBE (width = height; never a tall or wide rectangle), slightly rounded edges, small round hatch cap on top center (Kitt's hatch). Cream base heavily weathered with orange rust blotches and faded, washed-out pale blue-gray and faint olive patches. Round speaker "ear" disc on each side (cream/silver rim, dark concentric center).
+  - **Face:** flat front plate; two large round eyes set in raised round bezels; white eyeballs, orange-brown irises, black pupils, white catchlight. No nose, no eyebrows (expression comes from eyelids and bezel tilt). Mouth is one thin engraved black line, slight smile.
+  - **Neck:** short dark metal coiled spring.
+  - **Torso:** boxy, rounded-rectangle barrel, ORANGE RUST dominant. Front: cream riveted plate with two small latches on top and a small round blue camera lens in the center; small black square camera box on the lower viewer-right side; a blue patch lower viewer-left and a faded red patch lower right. Back: cream rectangular panel with a blue band across the lower back.
+  - **Arms:** segmented cream/bone cylinders with dark rubber rings at the joints, silver ball shoulders. **Hands: THREE segmented fingers + one thumb per hand (4 digits), Lysol-confirmed.** The current reference sheet draws four fingers in some views; that is off-model, so do not use the sheet as the hand reference until it is redrawn.
+  - **Legs:** short dark metal spring/accordion columns.
+  - **Feet:** oversized rounded clog-shaped shoes with a dark rectangular slot on each toe. Viewer-left (Hal's right) = orange rust; viewer-right (Hal's left) = blue with rust speckles.
+  - **Colors:** orange rust + cream dominate. Blue appears ONLY as faded, weathered patches (head/face plate, small torso patches, lower back band) and the left shoe. It is an accent, never a base color.
+  - **Style:** hand-painted illustration look, dark ink outlines, grungy weathered texture, rivets on every seam.
+  - **NEGATIVE DESIGN (Hal):** no solid, clean or dominant blue body; NEVER a mostly-blue head; head must be a true cube (as wide as tall), NEVER more rectangular than square; no tall or mostly-blue "cousin" robot; no glossy new metal; no nose; no eyebrows; no visible teeth; no four-finger, five-finger or human hands; never more or fewer than three fingers + thumb; no swapped shoe colors. Emotions stay within locked proportions.
 - Ned: only with the approved Ned canon master (`ned-canon-master.png`, approved 2026-10-07). 10-year-old robotic Jack Russell, weathered/rusted, KEEPS the large brown saddle patch on back and side, oversized mechanical nose (signature sensor), blue-gray aged eyes, mature slightly stocky middle, wiggle-waddle walk. Warm, steady, not yappy. No props or clothing in base canon. Movement should respect age. Pose/expression/angle may change; the design never does.
 - Kitt: only with reference (written canon; PENDING master-image verification). Small coiled robotic cobra camera with retractable hood, weathered pale-blue/gray/rust robot, bronze joints, black screen face, cyan eyes and camera lens; conceal unless requested. If cameo requested, make it an intentional small blink-and-you-miss-it hatch peek.
-- Character presence: never add Hal, Ned or Kitt when the user asked for character-free environments. For Hal's POV, show ONLY three-finger hands and any approved companion visible in frame. Do not invent human presenter.
+- Character presence: never add Hal, Ned or Kitt when the user asked for character-free environments. For Hal's POV, show ONLY canon three-finger-plus-thumb hands and any approved companion visible in frame. Do not invent human presenter.
 - No prop/wardrobe/background carryover across new projects unless user specifies. Within one project, maintain continuity exactly.
 
 ## Production notes: choosing hands and arms (decision rationale)
-**Default: HAL_CANON hands**, not human hands, for Hal-branded shots. His visible three-finger silhouette, weathered pale-blue/cream/rust materials and robotic forearms are part of the recognizable character identity. Human hands are more familiar to most video models, but switching to them without a story reason weakens brand continuity.
+**Default: HAL_CANON hands**, not human hands, for Hal-branded shots. His visible canon three-finger-plus-thumb silhouette, orange rust and cream weathered metal with faded blue accents, and segmented cream robotic forearms are part of the recognizable character identity. Human hands are more familiar to most video models, but switching to them without a story reason weakens brand continuity.
 
 **Difficulty is action-dependent, not a blanket ban.** Picking up an ingredient or slowly stirring is generally manageable with a good image reference and one isolated action. Fine tweezers, continuous kneading, tiny precise placements, or fingers occluding each other are higher-risk: plausible failures include extra fingers, fused digits, floating tools, hands clipping through food, and arm/paint drift. These are qualitative production expectations, not measured model benchmarks.
 
 **Hands Mode** (set independently for each scene):
-- `HAL_CANON` (default for Hal scenes): show Hal's exact THREE fingers per hand and canon forearms; reference close-ups are required. Do not cover his fingers with human-like nitrile gloves unless specifically directed.
+- `HAL_CANON` (default for Hal scenes): show Hal's exact canon hand: three segmented fingers + one thumb per hand and canon forearms; reference close-ups are required. Do not cover his fingers with human-like nitrile gloves unless specifically directed.
 - `HUMAN` (explicit opt-in): realistic human hands for challenging precision choreography or scenes deliberately without Hal. Don't silently replace Hal hands with human hands.
 - `NO_HANDS`: tabletop, autonomous process, cutaway, or finished-product beauty shot.
 
-**Execution guidance:** Frame only the hands and forearms in tabletop POV if a full character is unnecessary; maintain arm connection and anatomical consistency. Use tools sized for a three-finger grip. Put one physical action into each short video shot, supported by an approved first-frame image and, where possible, final-frame chaining. Check fingers before spending animation credits. Begin with a low-cost ~5-second test of Hal stirring batter; proceed to harder movements only if anatomy and contact remain stable. If a shot repeatedly fails, first simplify movement, alter tool geometry or reduce occlusion; use `HUMAN` only when authorized.
+**Execution guidance:** Frame only the hands and forearms in tabletop POV if a full character is unnecessary; maintain arm connection and anatomical consistency. Use tools sized for a Hal's segmented robotic grip. Put one physical action into each short video shot, supported by an approved first-frame image and, where possible, final-frame chaining. Check fingers before spending animation credits. Begin with a low-cost ~5-second test of Hal stirring batter; proceed to harder movements only if anatomy and contact remain stable. If a shot repeatedly fails, first simplify movement, alter tool geometry or reduce occlusion; use `HUMAN` only when authorized.
 
-**QA for Hal hands:** count three fingers on each visible hand, inspect joints/forearm patina, grip contact, tool scale, object deformation, and consistency on first/middle/last frames. Record the chosen Hands Mode in the scene ledger.
+**QA for Hal hands:** count three fingers + one thumb on each visible hand, inspect joints/forearm patina, grip contact, tool scale, object deformation, and consistency on first/middle/last frames. Record the chosen Hands Mode in the scene ledger.
 
 ## Credit Conservation Protocol
 **Plan free. Preview cheap. Generate once. Fix only what's broken.**

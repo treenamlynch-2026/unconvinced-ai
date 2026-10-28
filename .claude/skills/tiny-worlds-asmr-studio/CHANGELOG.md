@@ -1,5 +1,13 @@
 # Changelog
 
+## 1.2.1 (2026-10-28) — Lysol correction from the Hal character reference sheet
+- Hal fully re-described from the reference sheet (front/three-quarter/side/back + expressions).
+- **Hands: three fingers + thumb per hand** (Lysol-confirmed). Reference sheet hands flagged off-model (draws four fingers in some views).
+- Colors: orange rust + cream dominate; blue only as faded, weathered accent patches and the left shoe. A solid or mostly-blue robot = the cousin (NEGATIVE DESIGN).
+- Added Hal NEGATIVE DESIGN list, incl. never a mostly-blue head and never a head more rectangular than square (Lysol).
+- Hal shoe colors now VERIFIED against the sheet (viewer-left orange, viewer-right blue).
+- Version `1.2.0-draft` → `1.2.1`.
+
 ## 1.2.0-draft (2026-10-28) — PENDING IRIS REVIEW
 Technical (Claude):
 - Frontmatter: `version` moved to `metadata.version` (Claude validator rejects unknown keys); added owners + source-of-truth path.
