@@ -1,9 +1,12 @@
 # Changelog
 
-## 1.2.1 (2026-10-28) — Lysol correction
-- Hal colors: rusted metal with orange and cream tones; NO blue on body or head — the only blue is the viewer-right shoe.
-- Pale blue moved to Hal NEGATIVE DESIGN (pale blue = the cousin robot).
-- Version `1.2.0-draft` → `1.2.1` (draft merged and approved).
+## 1.2.1 (2026-10-28) — Lysol correction from the Hal character reference sheet
+- Hal fully re-described from the reference sheet (front/three-quarter/side/back + expressions).
+- **Hands: four fingers + thumb per hand.** All "three-finger" rules replaced.
+- Colors: orange rust + cream dominate; blue only as faded, weathered accent patches and the left shoe. A solid or mostly-blue robot = the cousin (NEGATIVE DESIGN).
+- Added Hal NEGATIVE DESIGN list.
+- Hal shoe colors now VERIFIED against the sheet (viewer-left orange, viewer-right blue).
+- Version `1.2.0-draft` → `1.2.1`.
 
 ## 1.2.0-draft (2026-10-28) — PENDING IRIS REVIEW
 Technical (Claude):
