@@ -202,7 +202,7 @@ export default function Home() {
               <Button to="/about" variant="ghost">Meet Treena</Button>
             </div>
           </div>
-          <div className="order-1 lg:order-2 flex justify-center"><img src="/images/unconvinced-logo.png" alt="Unconvinced." width="415" height="224" className="w-full max-w-[440px] h-auto" /></div>
+          <div className="order-1 lg:order-2 flex justify-center"><img src="/images/unconvinced-logo-tagline.png" alt="Unconvinced. — It passed every test it wrote for itself." width="1000" height="515" className="w-full max-w-[440px] h-auto" /></div>
         </div>
       </section>
 
