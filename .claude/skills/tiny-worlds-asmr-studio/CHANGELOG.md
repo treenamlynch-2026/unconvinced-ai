@@ -1,7 +1,7 @@
 # Changelog
 
 ## 1.2.1 (2026-10-28) — Lysol correction
-- Hal colors: rusted metal with orange and cream tones; blue only a barely-there touch.
+- Hal colors: rusted metal with orange and cream tones; NO blue on body or head — the only blue is the viewer-right shoe.
 - Pale blue moved to Hal NEGATIVE DESIGN (pale blue = the cousin robot).
 - Version `1.2.0-draft` → `1.2.1` (draft merged and approved).
 
