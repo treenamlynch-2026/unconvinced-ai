@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { Link, usePath } from "./router.jsx";
 
 export const EMAIL = "inquiry@unconvinced.ai";
-export const HAL_URL = "https://www.youtube.com/@ConvinceHal";
+export const HAL_URL = "https://www.youtube.com/@HalBuildsAI";
 
 // Concept 2 rusted wordmark. The trailing period is part of the company name.
 export function Wordmark({ size = "2rem", className = "" }) {
