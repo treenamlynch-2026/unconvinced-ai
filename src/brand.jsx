@@ -93,7 +93,7 @@ const NAV = [
 export function Layout({ title, children }) {
   const path = usePath();
   useEffect(() => {
-    document.title = title ? `${title} | Unconvinced.` : "Unconvinced. | Build it? Poke it? Support it?";
+    document.title = title ? `${title} | Unconvinced.` : "Unconvinced. | It passed every test it wrote for itself.";
   }, [title]);
 
   const NavLink = ({ to, label }) =>
@@ -122,7 +122,7 @@ export function Layout({ title, children }) {
           <Button to="/contact" variant="cream">Contact <span aria-hidden="true">→</span></Button>
           <div className="w-full h-px my-3" style={{ background: "var(--color-line)" }} />
           <img src="/images/unconvinced-logo-mark.png" alt="Unconvinced." width="415" height="184" loading="lazy" className="h-20 sm:h-24 w-auto" />
-          <p className="uc-slab uc-muted">Build it? Poke it? Support it? — I can do that!</p>
+          <p className="uc-slab uc-muted">It passed every test it wrote for itself.</p>
         </div>
       </footer>
       <Hal />

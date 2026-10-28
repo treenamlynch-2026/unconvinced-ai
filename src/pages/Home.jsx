@@ -193,8 +193,8 @@ export default function Home() {
         <div className="max-w-6xl mx-auto px-4 sm:px-6 py-14 sm:py-20 grid lg:grid-cols-2 gap-10 items-center">
           <div className="flex flex-col gap-5 order-2 lg:order-1">
             <h1 className="uc-display" style={{ fontSize: "clamp(2.5rem, 6vw, 4rem)" }}>
-              Build it? Poke it? Support it?<br />
-              <span style={{ color: "var(--color-steel)" }}>I can do that!</span>
+              It passed every test<br />
+              <span style={{ color: "var(--color-steel)" }}>it wrote for itself.</span>
             </h1>
             <p className="text-lg" style={{ color: "var(--color-text-2)" }}>I’m Treena, a full-stack systems developer who builds apps, connects AI to real workflows, and tests what comes out. Available for freelance AI integration, automation, development, and support.</p>
             <div className="flex flex-wrap gap-3">
@@ -202,7 +202,7 @@ export default function Home() {
               <Button to="/about" variant="ghost">Meet Treena</Button>
             </div>
           </div>
-          <div className="order-1 lg:order-2 flex justify-center"><img src="/images/unconvinced-logo.png" alt="Unconvinced. — Build it? Poke it? Support it?" width="415" height="224" className="w-full max-w-[440px] h-auto" /></div>
+          <div className="order-1 lg:order-2 flex justify-center"><img src="/images/unconvinced-logo.png" alt="Unconvinced." width="415" height="224" className="w-full max-w-[440px] h-auto" /></div>
         </div>
       </section>
 
