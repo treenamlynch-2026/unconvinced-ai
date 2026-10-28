@@ -2,7 +2,7 @@
 name: tiny-worlds-asmr-studio
 description: Plan, prompt, and quality-check coherent ASMR micro-videos for miniature construction, food assembly, eating, edible illusions, and Hal Cooks robot-character shorts. Use for AI cooking/mukbang, tiny-world builds, satisfying tactile ASMR, or Flow/Veo scene prompts. Preserves character canon, continuity, audio, and generation credits.
 metadata:
-  version: "1.2.0-draft"
+  version: "1.2.1"
   owners: "Iris = creative content and production rules; Claude = technical integration and review"
   source: "github.com/treenamlynch-2026/unconvinced-ai/.claude/skills/tiny-worlds-asmr-studio"
 ---
@@ -33,14 +33,14 @@ Activate for prompts about AI cooking, mukbang, macro food, tiny-world construct
 10. **Package** storyboard, reference inventory, scene prompts, negative prompts, keyframe descriptions, audio plan, title/hook, provider settings (if known), QA checklist and export handoff. Delivery: save files to `C:\Users\Administrator\Desktop\AI DOWNLOAD FOLDER\Claude` in one clearly named project subfolder, or deliver one zip in chat with a visible download option. If that folder is unreachable, say so and name the files. Never claim a file was saved somewhere it was not.
 
 ## Canon / characters
-- Hal: Only use the user's actual `Canon Hal.png` or an explicitly approved canon image. Short stocky aged robot, square weathered head, barrel chest, spring neck, short legs, chunky oversized feet, pale blue/cream/rust patina, white eyes with brown irises, three-finger hands; viewer-left shoe orange, viewer-right shoe blue (written canon; PENDING master-image verification). Top hatch for Kitt. Do not substitute tall, mostly-blue “cousin” robot. Emotions must be achieved within locked proportions.
+- Hal: Only use the user's actual `Canon Hal.png` or an explicitly approved canon image. Short stocky aged robot, square weathered head, barrel chest, spring neck, short legs, chunky oversized feet, rusted weathered metal with orange and cream tones (blue only as a barely-there touch), white eyes with brown irises, three-finger hands; viewer-left shoe orange, viewer-right shoe blue (written canon; PENDING master-image verification). Top hatch for Kitt. NEGATIVE DESIGN (Hal): no pale-blue body or plating — pale blue is the cousin robot, not Hal; no tall or mostly-blue “cousin” robot. Emotions must be achieved within locked proportions.
 - Ned: only with the approved Ned canon master (`ned-canon-master.png`, approved 2026-10-07). 10-year-old robotic Jack Russell, weathered/rusted, KEEPS the large brown saddle patch on back and side, oversized mechanical nose (signature sensor), blue-gray aged eyes, mature slightly stocky middle, wiggle-waddle walk. Warm, steady, not yappy. No props or clothing in base canon. Movement should respect age. Pose/expression/angle may change; the design never does.
 - Kitt: only with reference (written canon; PENDING master-image verification). Small coiled robotic cobra camera with retractable hood, weathered pale-blue/gray/rust robot, bronze joints, black screen face, cyan eyes and camera lens; conceal unless requested. If cameo requested, make it an intentional small blink-and-you-miss-it hatch peek.
 - Character presence: never add Hal, Ned or Kitt when the user asked for character-free environments. For Hal's POV, show ONLY three-finger hands and any approved companion visible in frame. Do not invent human presenter.
 - No prop/wardrobe/background carryover across new projects unless user specifies. Within one project, maintain continuity exactly.
 
 ## Production notes: choosing hands and arms (decision rationale)
-**Default: HAL_CANON hands**, not human hands, for Hal-branded shots. His visible three-finger silhouette, weathered pale-blue/cream/rust materials and robotic forearms are part of the recognizable character identity. Human hands are more familiar to most video models, but switching to them without a story reason weakens brand continuity.
+**Default: HAL_CANON hands**, not human hands, for Hal-branded shots. His visible three-finger silhouette, rusted metal with orange and cream tones and robotic forearms are part of the recognizable character identity. Human hands are more familiar to most video models, but switching to them without a story reason weakens brand continuity.
 
 **Difficulty is action-dependent, not a blanket ban.** Picking up an ingredient or slowly stirring is generally manageable with a good image reference and one isolated action. Fine tweezers, continuous kneading, tiny precise placements, or fingers occluding each other are higher-risk: plausible failures include extra fingers, fused digits, floating tools, hands clipping through food, and arm/paint drift. These are qualitative production expectations, not measured model benchmarks.
 

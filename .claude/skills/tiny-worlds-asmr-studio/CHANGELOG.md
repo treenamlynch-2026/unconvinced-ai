@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.2.1 (2026-10-28) — Lysol correction
+- Hal colors: rusted metal with orange and cream tones; blue only a barely-there touch.
+- Pale blue moved to Hal NEGATIVE DESIGN (pale blue = the cousin robot).
+- Version `1.2.0-draft` → `1.2.1` (draft merged and approved).
+
 ## 1.2.0-draft (2026-10-28) — PENDING IRIS REVIEW
 Technical (Claude):
 - Frontmatter: `version` moved to `metadata.version` (Claude validator rejects unknown keys); added owners + source-of-truth path.
