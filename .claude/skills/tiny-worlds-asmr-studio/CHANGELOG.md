@@ -8,7 +8,7 @@ Technical (Claude):
 - Description: added trigger phrases.
 
 Creative (drafted by Claude — Iris approves/edits/rejects):
-- Ned canon aligned to approved master (2026-10-07): saddle patch KEPT, oversized mechanical nose, stocky wiggle-waddle.
+- Ned canon aligned to approved master (2026-10-07): white coat/fine freckles, no large saddle patch, oversized mechanical nose, stocky wiggle-waddle.
 - Hal lip-sync rule added.
 - New Credit Conservation Protocol section (Flow/Veo only, cross-verify, still first, max 2 retries, minimal repair, no non-Hal substitutes).
 - Cabin example: Scene A split into A1/A2 (one action per shot); Scene B roof made one action; Scene C "indistinct movement" removed.
@@ -19,7 +19,7 @@ Iris review round 1 (2026-10-28) — applied:
 - Public-repo rule: no private canon images; use placeholders.
 - Hal shoe colors + Kitt (now incl. retractable hood) kept as written canon, flagged PENDING master-image verification.
 
-Status: Iris approval provisional, pending diff review. Do not merge until Iris signs off.
+Iris final diff review: corrected Ned's coat to approved written canon (white with fine freckles, no saddle patch); corrected Scene C hand continuity. Hal and Kitt written canon retained with master-image verification still required before generation. Approved for merge.
 
 ## 1.1.0 (Iris)
 - Hands Mode (HAL_CANON / HUMAN / NO_HANDS) + production notes.
