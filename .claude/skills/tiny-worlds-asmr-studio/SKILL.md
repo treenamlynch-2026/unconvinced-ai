@@ -33,9 +33,9 @@ Activate for prompts about AI cooking, mukbang, macro food, tiny-world construct
 10. **Package** storyboard, reference inventory, scene prompts, negative prompts, keyframe descriptions, audio plan, title/hook, provider settings (if known), QA checklist and export handoff. Delivery: save files to `C:\Users\Administrator\Desktop\AI DOWNLOAD FOLDER\Claude` in one clearly named project subfolder, or deliver one zip in chat with a visible download option. If that folder is unreachable, say so and name the files. Never claim a file was saved somewhere it was not.
 
 ## Canon / characters
-- Hal: Only use the user's actual `Canon Hal.png` or an explicitly approved canon image. Short stocky aged robot, square weathered head, barrel chest, spring neck, short legs, chunky oversized feet, pale blue/cream/rust patina, white eyes with brown irises, three-finger hands; viewer-left shoe orange, viewer-right shoe blue. Top hatch for Kitt. Do not substitute tall, mostly-blue “cousin” robot. Emotions must be achieved within locked proportions.
+- Hal: Only use the user's actual `Canon Hal.png` or an explicitly approved canon image. Short stocky aged robot, square weathered head, barrel chest, spring neck, short legs, chunky oversized feet, pale blue/cream/rust patina, white eyes with brown irises, three-finger hands; viewer-left shoe orange, viewer-right shoe blue (written canon; PENDING master-image verification). Top hatch for Kitt. Do not substitute tall, mostly-blue “cousin” robot. Emotions must be achieved within locked proportions.
 - Ned: only with the approved Ned canon master (`ned-canon-master.png`, approved 2026-10-07). 10-year-old robotic Jack Russell, weathered/rusted, KEEPS the large brown saddle patch on back and side, oversized mechanical nose (signature sensor), blue-gray aged eyes, mature slightly stocky middle, wiggle-waddle walk. Warm, steady, not yappy. No props or clothing in base canon. Movement should respect age. Pose/expression/angle may change; the design never does.
-- Kitt: only with reference. Small coiled cobra camera, weathered pale-blue/gray/rust robot, bronze joints, black screen face, cyan eyes and camera lens; conceal unless requested. If cameo requested, make it an intentional small blink-and-you-miss-it hatch peek.
+- Kitt: only with reference (written canon; PENDING master-image verification). Small coiled robotic cobra camera with retractable hood, weathered pale-blue/gray/rust robot, bronze joints, black screen face, cyan eyes and camera lens; conceal unless requested. If cameo requested, make it an intentional small blink-and-you-miss-it hatch peek.
 - Character presence: never add Hal, Ned or Kitt when the user asked for character-free environments. For Hal's POV, show ONLY three-finger hands and any approved companion visible in frame. Do not invent human presenter.
 - No prop/wardrobe/background carryover across new projects unless user specifies. Within one project, maintain continuity exactly.
 
@@ -58,9 +58,10 @@ Activate for prompts about AI cooking, mukbang, macro food, tiny-world construct
 1. **Provider:** Google Flow / Veo only. Higgsfield and Everygen are banned. Never start a paid generation during installation or skill testing.
 2. **Cross-verify:** Claude and Iris each check the final prompt (canon refs attached, correct character descriptions, Hands Mode, action count) before every video request.
 3. **Still first:** approve a still/keyframe before any video generation.
-4. **Retry cap:** max 2 regenerations per shot. After that, stop and ask Lysol; do not keep spending.
+4. **Retry cap:** max 2 regeneration attempts per shot, never automatic. Every paid generation, including each regeneration, needs Lysol's authorization. A failed identity or continuity check STOPS the workflow; it does not trigger a retry. After 2 attempts, stop and ask Lysol.
 5. **Minimal repair:** regenerate only the failed shot; never rebuild approved scenes for cosmetic nitpicks.
-6. **No substitutes:** if Hal (or another required character) cannot be rendered on canon, stop and ask; never ship a non-Hal fallback (stock voice, plain cards, generic robot).
+6. **No substitutes:** if Hal (or another required character) cannot be rendered on canon, stop and ask; never silently substitute human hands, another robot, stock voice or plain cards.
+7. **Public repo:** never commit private canon reference images to the public GitHub repo without Lysol's approval. Use reference placeholders (exact filename + required role) and document the needed assets instead.
 
 ## Camera, pacing, audio
 - Default vertical 9:16 for Shorts, horizontal 16:9 when specified; macro photorealistic lighting; camera physically locked for precision assembly. In eating mode, gentle tracking may be explicitly permitted. Never combine “completely fixed camera” with “camera follows subject” in the same shot.

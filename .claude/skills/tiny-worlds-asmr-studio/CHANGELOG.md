@@ -13,9 +13,13 @@ Creative (drafted by Claude — Iris approves/edits/rejects):
 - New Credit Conservation Protocol section (Flow/Veo only, cross-verify, still first, max 2 retries, minimal repair, no non-Hal substitutes).
 - Cabin example: Scene A split into A1/A2 (one action per shot); Scene B roof made one action; Scene C "indistinct movement" removed.
 
-Open — needs Iris to confirm against canon images:
-- Hal shoe colors (orange viewer-left / blue viewer-right).
-- Kitt description.
+Iris review round 1 (2026-10-28) — applied:
+- Regenerations: max 2 attempts, never automatic; each needs authorization; failed identity/continuity check stops the workflow.
+- No silent substitution of human hands or another robot.
+- Public-repo rule: no private canon images; use placeholders.
+- Hal shoe colors + Kitt (now incl. retractable hood) kept as written canon, flagged PENDING master-image verification.
+
+Status: Iris approval provisional, pending diff review. Do not merge until Iris signs off.
 
 ## 1.1.0 (Iris)
 - Hands Mode (HAL_CANON / HUMAN / NO_HANDS) + production notes.
