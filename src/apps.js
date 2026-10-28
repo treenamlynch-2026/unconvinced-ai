@@ -62,3 +62,21 @@ export const PROJECTS = [
 ];
 
 export const getApp = (slug) => APPS.find((a) => a.slug === slug);
+
+// Merch: Printify designs. buy: product URL once a store listing exists; null shows "Coming soon".
+const M = "/images/merch";
+const TEE = "$32.99–$39.99";
+export const MERCH = [
+  { character: "Hal", items: [
+    { kind: "Tee", price: TEE, img: `${M}/hal-tee.webp`, buy: null },
+    { kind: "Crewneck", price: "$39.15–$59.25", img: `${M}/hal-crewneck.webp`, buy: null },
+  ] },
+  { character: "Ned", items: [
+    { kind: "Tee", price: TEE, img: `${M}/ned-tee.webp`, buy: null },
+    { kind: "Crewneck", price: "$39.15–$59.25", img: `${M}/ned-crewneck.webp`, buy: null },
+  ] },
+  { character: "Kitt", items: [
+    { kind: "Tee", price: TEE, img: `${M}/kitt-tee.webp`, buy: null },
+    { kind: "Crewneck", price: "$39.36–$54.44", img: `${M}/kitt-crewneck.webp`, buy: null },
+  ] },
+];

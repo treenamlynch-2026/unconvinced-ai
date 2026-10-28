@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Layout, LogoLockup, Button } from "../brand.jsx";
 import { Link } from "../router.jsx";
-import { APPS } from "../apps.js";
+import { APPS, MERCH } from "../apps.js";
 import Resume from "../Resume.jsx";
 
 
@@ -81,6 +81,41 @@ function AppShowcase() {
               {a.live ? "On the App Store" : "In review"}
             </span>
           </button>
+        ))}
+      </div>
+    </section>
+  );
+}
+
+// Hal merch: one row per character, tee + crewneck photo cards.
+function Merch() {
+  return (
+    <section id="merch" className="uc-iron-2" style={{ borderTop: "1px solid var(--color-line)" }}>
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 py-12 flex flex-col gap-8">
+        <div className="flex flex-col gap-2">
+          <h2 className="uc-display text-3xl">Hal merch</h2>
+          <p className="uc-muted">For anyone whose first response is ‘I have questions.’</p>
+        </div>
+        {MERCH.map((c) => (
+          <div key={c.character} className="flex flex-col gap-3">
+            <h3 className="uc-ui font-bold text-xl">{c.character}</h3>
+            <div className="grid gap-4 grid-cols-1 sm:grid-cols-2">
+              {c.items.map((it) => (
+                <figure key={it.kind} className="uc-card" style={{ padding: 0, overflow: "hidden" }}>
+                  <img src={it.img} alt={`${c.character} ${it.kind.toLowerCase()}`} loading="lazy" width="800" height="800" className="w-full h-auto block" style={{ aspectRatio: "1 / 1", objectFit: "cover" }} />
+                  <figcaption className="flex items-center justify-between gap-3 flex-wrap" style={{ padding: "1rem 1.25rem" }}>
+                    <span className="flex flex-col">
+                      <span className="uc-ui font-bold">{c.character} {it.kind}</span>
+                      <span className="uc-muted text-sm">{it.price}</span>
+                    </span>
+                    {it.buy
+                      ? <a href={it.buy} target="_blank" rel="noopener" className="uc-btn uc-btn-rust">Buy <span aria-hidden="true">→</span></a>
+                      : <span className="uc-btn uc-btn-ghost" aria-disabled="true">Coming soon</span>}
+                  </figcaption>
+                </figure>
+              ))}
+            </div>
+          </div>
         ))}
       </div>
     </section>
@@ -202,12 +237,14 @@ export default function Home() {
       {/* 5. Resume */}
       <Resume />
 
-      {/* 6. About + Hal merch */}
+      {/* 6. Hal merch */}
+      <Merch />
+
+      {/* 7. About */}
       <section className="uc-iron-2" style={{ borderTop: "1px solid var(--color-line)" }}>
         <div className="max-w-6xl mx-auto px-4 sm:px-6 py-12 grid gap-8" style={{ gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))" }}>
           {[
             ["/about", "About Treena", "The developer behind the apps: practical experience, a curious mind, and a habit of asking why."],
-            [null, "Hal merch", "For anyone whose first response is ‘I have questions.’ In the works."],
           ].map(([to, t, description]) => (
             <div key={t} className="flex flex-col gap-2 items-start">
               <h3 className="uc-ui font-bold text-xl">{t}</h3>
