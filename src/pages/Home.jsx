@@ -87,6 +87,8 @@ function AppShowcase() {
   );
 }
 
+const SHOW_MERCH = false;
+
 // Hal merch: one row per character, tee + crewneck photo cards.
 function Merch() {
   return (
@@ -239,8 +241,8 @@ export default function Home() {
       {/* 5. Resume */}
       <Resume />
 
-      {/* 6. Hal merch */}
-      <Merch />
+      {/* 6. Hal merch — tabled Oct 28 2026; set SHOW_MERCH true to restore */}
+      {SHOW_MERCH && <Merch />}
 
       {/* 7. About */}
       <section className="uc-iron-2" style={{ borderTop: "1px solid var(--color-line)" }}>
