@@ -16,7 +16,7 @@
         "Directs generative AI through requirements, implementation, testing and release; owns workflows, acceptance criteria and release priorities.",
         "Tests AI-generated code against requirements, edge cases, data integrity and failure modes; uses logs to investigate behavior and challenge production-readiness assumptions.",
         "Built the Congress Trade Detective web presence and its long- and short-form content operation, now under the Unconvinced. brand, using AI for research, scripting, visuals and workflow automation under editorial review.",
-        "Designed and validated a Fourthwall payment proof of concept for a direct product-to-payment flow without a full e-commerce platform."
+        "Built The Room, an open-source workspace that puts Claude and an OpenAI model in one project conversation, with cross-review, shared rules and saved decisions (Next.js, TypeScript, SQLite, Anthropic and OpenAI APIs)."
       ]
     },
     {
