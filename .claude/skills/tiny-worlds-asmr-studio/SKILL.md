@@ -2,12 +2,12 @@
 name: tiny-worlds-asmr-studio
 description: Plan, prompt, and quality-check coherent ASMR micro-videos for miniature construction, food assembly, eating, edible illusions, and Hal Cooks robot-character shorts. Use for AI cooking/mukbang, tiny-world builds, satisfying tactile ASMR, or Flow/Veo scene prompts. Preserves character canon, continuity, audio, and generation credits.
 metadata:
-  version: "1.2.1"
+  version: "1.2.2"
   owners: "Iris = creative content and production rules; Claude = technical integration and review"
   source: "github.com/treenamlynch-2026/unconvinced-ai/.claude/skills/tiny-worlds-asmr-studio"
 ---
 
-> **Version check:** state this skill's `metadata.version` before starting any job. The GitHub folder above is the only source of truth; installed copies are read-only mirrors.
+> **Skill version: 1.2.2.** State this version before starting any job. Source of truth: `github.com/treenamlynch-2026/unconvinced-ai/.claude/skills/tiny-worlds-asmr-studio` (installed copies are read-only mirrors and may contain only this SKILL.md; `templates/`, `references/`, `examples/` and `CHANGELOG.md` live in that GitHub folder).
 
 # Tiny Worlds ASMR Studio
 
@@ -35,15 +35,15 @@ Activate for prompts about AI cooking, mukbang, macro food, tiny-world construct
 ## Canon / characters
 - Hal: Only use the user's actual Hal character reference sheet (front / three-quarter / side / back + expressions) or an explicitly approved canon image. Short, stocky, about 2.5 heads tall; the head is nearly as wide as the torso.
   - **Head:** big riveted CUBE (width = height; never a tall or wide rectangle), slightly rounded edges, small round hatch cap on top center (Kitt's hatch). Cream base heavily weathered with orange rust blotches and faded, washed-out pale blue-gray and faint olive patches. Round speaker "ear" disc on each side (cream/silver rim, dark concentric center).
-  - **Face:** flat front plate; two large round eyes set in raised round bezels; white eyeballs, orange-brown irises, black pupils, white catchlight. No nose, no eyebrows (expression comes from eyelids and bezel tilt). Mouth is one thin engraved black line, slight smile.
+  - **Face:** flat front plate; two large round eyes set in raised round bezels; white eyeballs, orange-brown irises, black pupils, white catchlight. No nose, no eyebrows (expression comes from eyelids and bezel tilt). Mouth: closed = one thin engraved black line, slight smile; open (talking/laughing) = wide rectangular mouth with one row of flat cream rectangular teeth along the top and a pink tongue (canon front image).
   - **Neck:** short dark metal coiled spring.
   - **Torso:** boxy, rounded-rectangle barrel, ORANGE RUST dominant. Front: cream riveted plate with two small latches on top and a small round blue camera lens in the center; small black square camera box on the lower viewer-right side; a blue patch lower viewer-left and a faded red patch lower right. Back: cream rectangular panel with a blue band across the lower back.
-  - **Arms:** segmented cream/bone cylinders with dark rubber rings at the joints, silver ball shoulders. **Hands: THREE segmented fingers + one thumb per hand (4 digits), Lysol-confirmed.** The current reference sheet draws four fingers in some views; that is off-model, so do not use the sheet as the hand reference until it is redrawn.
+  - **Arms:** segmented cream/bone cylinders with dark rubber rings at the joints, silver ball shoulders. **Hands: THREE segmented fingers + one thumb per hand (4 digits), Lysol-confirmed.** HAND REFERENCE = the Hal canon front image (waving, both palms out, open smile; 1230×1278 transparent PNG, approved 2026-10-28). The multi-view reference sheet draws four fingers in some views; that is off-model for hands, so never use the sheet as the hand reference until it is redrawn.
   - **Legs:** short dark metal spring/accordion columns.
   - **Feet:** oversized rounded clog-shaped shoes with a dark rectangular slot on each toe. Viewer-left (Hal's right) = orange rust; viewer-right (Hal's left) = blue with rust speckles.
   - **Colors:** orange rust + cream dominate. Blue appears ONLY as faded, weathered patches (head/face plate, small torso patches, lower back band) and the left shoe. It is an accent, never a base color.
   - **Style:** hand-painted illustration look, dark ink outlines, grungy weathered texture, rivets on every seam.
-  - **NEGATIVE DESIGN (Hal):** no solid, clean or dominant blue body; NEVER a mostly-blue head; head must be a true cube (as wide as tall), NEVER more rectangular than square; no tall or mostly-blue "cousin" robot; no glossy new metal; no nose; no eyebrows; no visible teeth; no four-finger, five-finger or human hands; never more or fewer than three fingers + thumb; no swapped shoe colors. Emotions stay within locked proportions.
+  - **NEGATIVE DESIGN (Hal):** no solid, clean or dominant blue body; NEVER a mostly-blue head; head must be a true cube (as wide as tall), NEVER more rectangular than square; no tall or mostly-blue "cousin" robot; no glossy new metal; no nose; no eyebrows; no pointed, sharp or human teeth; no four-finger, five-finger or human hands; never more or fewer than three fingers + thumb; no swapped shoe colors. Emotions stay within locked proportions.
 - Ned: only with the approved Ned canon master (`ned-canon-master.png`, approved 2026-10-07). 10-year-old robotic Jack Russell, weathered/rusted, KEEPS the large brown saddle patch on back and side, oversized mechanical nose (signature sensor), blue-gray aged eyes, mature slightly stocky middle, wiggle-waddle walk. Warm, steady, not yappy. No props or clothing in base canon. Movement should respect age. Pose/expression/angle may change; the design never does.
 - Kitt: only with reference (written canon; PENDING master-image verification). Small coiled robotic cobra camera with retractable hood, weathered pale-blue/gray/rust robot, bronze joints, black screen face, cyan eyes and camera lens; conceal unless requested. If cameo requested, make it an intentional small blink-and-you-miss-it hatch peek.
 - Character presence: never add Hal, Ned or Kitt when the user asked for character-free environments. For Hal's POV, show ONLY canon three-finger-plus-thumb hands and any approved companion visible in frame. Do not invent human presenter.

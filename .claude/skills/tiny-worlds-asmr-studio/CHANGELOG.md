@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.2.2 (2026-10-28) — fixes from the first dry-run test
+- Version now stated in the body (account installs strip frontmatter, so `metadata.version` was invisible).
+- Body now points to the GitHub folder for templates/references/examples (account installs carry SKILL.md only).
+- Hand reference set: Hal canon front image (3 fingers + thumb verified on both hands). Image NOT committed (public repo); stored privately by Lysol.
+- Mouth rule corrected from the canon front image: closed = thin line; open = flat rectangular teeth row + pink tongue. Negative changed from "no visible teeth" to "no pointed, sharp or human teeth".
+
 ## 1.2.1 (2026-10-28) — Lysol correction from the Hal character reference sheet
 - Hal fully re-described from the reference sheet (front/three-quarter/side/back + expressions).
 - **Hands: three fingers + thumb per hand** (Lysol-confirmed). Reference sheet hands flagged off-model (draws four fingers in some views).
