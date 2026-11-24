@@ -1,0 +1,60 @@
+<style>
+/* Match the book artwork across the collection, recommendations and product details. */
+body.product, body:has(#fw-section-collection-template-collection-default),
+.collection, .product__gallery, .product-recommendations,
+.collection .tile__image, .product-recommendations .tile__image,
+.collection .tile__image > .image, .product-recommendations .tile__image > .image {
+  background-color: #000;
+}
+:is(.collection, .product-recommendations) .tile__image:has(> .image) {
+  border-color: #000;
+}
+:is(.collection, .product-recommendations) .tile[style] { color: inherit; }
+:is(.collection, .product-recommendations) .tile:is([href*="/products/christmas-gnomes-"], [href*="/products/hals-cowboy-christmas-"], [href*="/products/hals-baby-animals-"], [href*="/products/hals-farm-life-"]) .tile__image {
+  aspect-ratio: 1;
+  background: #000 var(--book-mockup) center / contain no-repeat;
+}
+:is(.collection, .product-recommendations) .tile:is([href*="/products/christmas-gnomes-"], [href*="/products/hals-cowboy-christmas-"], [href*="/products/hals-baby-animals-"], [href*="/products/hals-farm-life-"]) .tile__image > .image {
+  visibility: hidden;
+}
+.tile[href*="/products/christmas-gnomes-"] { --book-mockup: url("https://imgproxy.fourthwall.dev/A8hHelCsClUg8jz7RX-8whZF61JcFbfbW3NsNPQxCGE/w:1200/sm:1/enc/NaZipj58Jz8VsOhL/0PwEJQR3-z_Az0Dj/MQd8ghCz3L8uR5px/AqqltsPw_vzrgnn6/BR-3T32eBsFyIzWz/BEi6a3YpOMRyEM6Q/FNFbv7vS84NFHsjy/CWiktDhYQfbh4f8R/l2otN5uX_mr_COuq/jAJ2h4k2NKYX5qZ8/WwukiZ8p6IKlKdbY/yhVDeuRvLPfakMMB/ul24ULtHXfSeHLA_/l6852PiaohHVs35F/gVi1drzP3hjpckRX/NNBKh2R_KJKAawPg.jpg"); }
+.product__gallery img[alt="Christmas Gnomes Coloring Book (Printable PDF) product image (1)"] {
+  content: url("https://imgproxy.fourthwall.dev/A8hHelCsClUg8jz7RX-8whZF61JcFbfbW3NsNPQxCGE/w:1200/sm:1/enc/NaZipj58Jz8VsOhL/0PwEJQR3-z_Az0Dj/MQd8ghCz3L8uR5px/AqqltsPw_vzrgnn6/BR-3T32eBsFyIzWz/BEi6a3YpOMRyEM6Q/FNFbv7vS84NFHsjy/CWiktDhYQfbh4f8R/l2otN5uX_mr_COuq/jAJ2h4k2NKYX5qZ8/WwukiZ8p6IKlKdbY/yhVDeuRvLPfakMMB/ul24ULtHXfSeHLA_/l6852PiaohHVs35F/gVi1drzP3hjpckRX/NNBKh2R_KJKAawPg.jpg");
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1;
+  object-fit: contain;
+  background: #000;
+}
+.tile[href*="/products/hals-cowboy-christmas-"] { --book-mockup: url("https://imgproxy.fourthwall.dev/dJfiYg1bOyJrAifjJpXe2h74vNWn9KsmZSdN8CDU42w/w:1200/sm:1/enc/b_AxpBZfJxXeHX5O/iBw5UoCCK-VkwrzX/x4M3Qv3c0WA2Vaa2/ytqs5wgW1cZY5x6A/XqgYUhI7HVg3NobN/sDHwRD0TieexHIC_/4yIQowlC6OeUofuk/cP-jJn4_VnFJKCjM/WAuNh1KLOdArgwm2/hkc19PFvkoPeAz55/Rufw9kVplFU8rART/odAbSS8MIfoMr4-h/b-QJ3l3daGkpwZv4/2KvC_xT8re2bkZ1N/5iFUZh_NY8g2rw8l/BBFGrm-hm3CulX4_.jpg"); }
+.product__gallery img[alt="Hal's Cowboy Christmas Coloring Book (Printable PDF) product image (1)"] {
+  content: url("https://imgproxy.fourthwall.dev/dJfiYg1bOyJrAifjJpXe2h74vNWn9KsmZSdN8CDU42w/w:1200/sm:1/enc/b_AxpBZfJxXeHX5O/iBw5UoCCK-VkwrzX/x4M3Qv3c0WA2Vaa2/ytqs5wgW1cZY5x6A/XqgYUhI7HVg3NobN/sDHwRD0TieexHIC_/4yIQowlC6OeUofuk/cP-jJn4_VnFJKCjM/WAuNh1KLOdArgwm2/hkc19PFvkoPeAz55/Rufw9kVplFU8rART/odAbSS8MIfoMr4-h/b-QJ3l3daGkpwZv4/2KvC_xT8re2bkZ1N/5iFUZh_NY8g2rw8l/BBFGrm-hm3CulX4_.jpg");
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1;
+  object-fit: contain;
+  background: #000;
+}
+.tile[href*="/products/hals-baby-animals-"] { --book-mockup: url("https://imgproxy.fourthwall.dev/q18Y5s5I9GO0TTBNPsWnWItaFfYwunr2e1RUqwpju2k/w:1200/sm:1/enc/s0gzlxYhRKQEapaG/F283V_jCbTnKfM98/n7sHjlhNjMtElmnn/cb8PGHQZnjp_m-JT/Robqy8m-YbQ2DGtK/ZlVj27obi9TbaWml/ZxDpZ5yfSvZiKGST/CX1acwI6RRqHHrZ_/DTXgsOtV0aFzIzpX/1_H1pp5aezqgyvEJ/pnQRlrTUlsNy13DT/iLuv0fwDyrmW-zGW/bQ8IfBAFGoCtbQUk/2Rnsw4eXb44v-rl9/PiHBgLsrSDtxYhDA/n_AzLAxICklz_PXX.jpg"); }
+.product__gallery img[alt="Hal's Baby Animals Coloring Book (Printable PDF) product image (1)"] {
+  content: url("https://imgproxy.fourthwall.dev/q18Y5s5I9GO0TTBNPsWnWItaFfYwunr2e1RUqwpju2k/w:1200/sm:1/enc/s0gzlxYhRKQEapaG/F283V_jCbTnKfM98/n7sHjlhNjMtElmnn/cb8PGHQZnjp_m-JT/Robqy8m-YbQ2DGtK/ZlVj27obi9TbaWml/ZxDpZ5yfSvZiKGST/CX1acwI6RRqHHrZ_/DTXgsOtV0aFzIzpX/1_H1pp5aezqgyvEJ/pnQRlrTUlsNy13DT/iLuv0fwDyrmW-zGW/bQ8IfBAFGoCtbQUk/2Rnsw4eXb44v-rl9/PiHBgLsrSDtxYhDA/n_AzLAxICklz_PXX.jpg");
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1;
+  object-fit: contain;
+  background: #000;
+}
+.tile[href*="/products/hals-farm-life-"] { --book-mockup: url("https://imgproxy.fourthwall.dev/YZFZBXiMTVi7Po6VSVh0RZgmPFgst91JFNIpUzkMwGU/w:1200/sm:1/enc/FWcG2wlG2HV1a14b/3Di7z3uDs0H4faC5/Zr26A8lh8gnZKFr4/CdfEIzZGz6b_rHnB/uhhTqUNHGzwsZEux/LDqCz8p7YbRiyjEi/aM6KwYox8UpdXVxR/GfGrBckhcrsC-cvT/NpeQJp9sR3MxaxYY/mbLE630rtQXxLuGs/U96bP1xaiPdxkNkG/6xsE7oVhjuFkeUzn/zABld0uI9qVO01Dc/2Wlb3NnfNYImM7tm/iAwb_SM6WUYa6ujW/Xpdch4FMJ-KXbVXc.jpg"); }
+.product__gallery img[alt="Hal's Farm Life Farm Animals Coloring Book (Printable PDF) product image (1)"] {
+  content: url("https://imgproxy.fourthwall.dev/YZFZBXiMTVi7Po6VSVh0RZgmPFgst91JFNIpUzkMwGU/w:1200/sm:1/enc/FWcG2wlG2HV1a14b/3Di7z3uDs0H4faC5/Zr26A8lh8gnZKFr4/CdfEIzZGz6b_rHnB/uhhTqUNHGzwsZEux/LDqCz8p7YbRiyjEi/aM6KwYox8UpdXVxR/GfGrBckhcrsC-cvT/NpeQJp9sR3MxaxYY/mbLE630rtQXxLuGs/U96bP1xaiPdxkNkG/6xsE7oVhjuFkeUzn/zABld0uI9qVO01Dc/2Wlb3NnfNYImM7tm/iAwb_SM6WUYa6ujW/Xpdch4FMJ-KXbVXc.jpg");
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1;
+  object-fit: contain;
+  background: #000;
+}
+</style>

@@ -1,0 +1,19 @@
+.featured-collection, .product-tile, .tile, .tile__image, .tile__image .image { background-color: #000; }
+.tile { padding-bottom: 10px; }
+.tile__description { padding: 10px 4px 4px; }
+.tile__heading { color: #fff; font-size: 0.9rem; line-height: 1.3; }
+.tile__prices { color: #d4d4d4; }
+.col-grid { reading-flow: grid-order; }
+.col-grid > div:not(:has(.tile:is([href*="/products/christmas-gnomes-"], [href*="/products/hals-cowboy-christmas-"], [href*="/products/hals-baby-animals-"], [href*="/products/hals-farm-life-"]))) { display: none; }
+.col-grid > div:has(.tile[href*="/products/christmas-gnomes-"]) { order: -4; }
+.tile[href*="/products/christmas-gnomes-"] { --featured-cover: url("https://imgproxy.fourthwall.dev/A8hHelCsClUg8jz7RX-8whZF61JcFbfbW3NsNPQxCGE/w:1200/sm:1/enc/NaZipj58Jz8VsOhL/0PwEJQR3-z_Az0Dj/MQd8ghCz3L8uR5px/AqqltsPw_vzrgnn6/BR-3T32eBsFyIzWz/BEi6a3YpOMRyEM6Q/FNFbv7vS84NFHsjy/CWiktDhYQfbh4f8R/l2otN5uX_mr_COuq/jAJ2h4k2NKYX5qZ8/WwukiZ8p6IKlKdbY/yhVDeuRvLPfakMMB/ul24ULtHXfSeHLA_/l6852PiaohHVs35F/gVi1drzP3hjpckRX/NNBKh2R_KJKAawPg.jpg"); }
+.col-grid > div:has(.tile[href*="/products/hals-cowboy-christmas-"]) { order: -3; }
+.tile[href*="/products/hals-cowboy-christmas-"] { --featured-cover: url("https://imgproxy.fourthwall.dev/dJfiYg1bOyJrAifjJpXe2h74vNWn9KsmZSdN8CDU42w/w:1200/sm:1/enc/b_AxpBZfJxXeHX5O/iBw5UoCCK-VkwrzX/x4M3Qv3c0WA2Vaa2/ytqs5wgW1cZY5x6A/XqgYUhI7HVg3NobN/sDHwRD0TieexHIC_/4yIQowlC6OeUofuk/cP-jJn4_VnFJKCjM/WAuNh1KLOdArgwm2/hkc19PFvkoPeAz55/Rufw9kVplFU8rART/odAbSS8MIfoMr4-h/b-QJ3l3daGkpwZv4/2KvC_xT8re2bkZ1N/5iFUZh_NY8g2rw8l/BBFGrm-hm3CulX4_.jpg"); }
+.col-grid > div:has(.tile[href*="/products/hals-baby-animals-"]) { order: -2; }
+.tile[href*="/products/hals-baby-animals-"] { --featured-cover: url("https://imgproxy.fourthwall.dev/q18Y5s5I9GO0TTBNPsWnWItaFfYwunr2e1RUqwpju2k/w:1200/sm:1/enc/s0gzlxYhRKQEapaG/F283V_jCbTnKfM98/n7sHjlhNjMtElmnn/cb8PGHQZnjp_m-JT/Robqy8m-YbQ2DGtK/ZlVj27obi9TbaWml/ZxDpZ5yfSvZiKGST/CX1acwI6RRqHHrZ_/DTXgsOtV0aFzIzpX/1_H1pp5aezqgyvEJ/pnQRlrTUlsNy13DT/iLuv0fwDyrmW-zGW/bQ8IfBAFGoCtbQUk/2Rnsw4eXb44v-rl9/PiHBgLsrSDtxYhDA/n_AzLAxICklz_PXX.jpg"); }
+.col-grid > div:has(.tile[href*="/products/hals-farm-life-"]) { order: -1; }
+.tile[href*="/products/hals-farm-life-"] { --featured-cover: url("https://imgproxy.fourthwall.dev/YZFZBXiMTVi7Po6VSVh0RZgmPFgst91JFNIpUzkMwGU/w:1200/sm:1/enc/FWcG2wlG2HV1a14b/3Di7z3uDs0H4faC5/Zr26A8lh8gnZKFr4/CdfEIzZGz6b_rHnB/uhhTqUNHGzwsZEux/LDqCz8p7YbRiyjEi/aM6KwYox8UpdXVxR/GfGrBckhcrsC-cvT/NpeQJp9sR3MxaxYY/mbLE630rtQXxLuGs/U96bP1xaiPdxkNkG/6xsE7oVhjuFkeUzn/zABld0uI9qVO01Dc/2Wlb3NnfNYImM7tm/iAwb_SM6WUYa6ujW/Xpdch4FMJ-KXbVXc.jpg"); }
+.tile__image { width: 100%; aspect-ratio: 1; margin: 0; transform: none; box-shadow: none; border: 0; border-radius: 0; overflow: hidden; background: #000 var(--featured-cover) center / contain no-repeat; }
+.tile__image > .image { visibility: hidden; }
+.tile__image::before, .tile__image::after { content: none; }
+.tile__description::after { content: "View Book"; display: table; margin: 12px auto 0; border-radius: 999px; padding: 7px 15px; background: #18dfc7; color: #0c2020; font-weight: 700; }
